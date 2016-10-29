@@ -1,6 +1,7 @@
 <?php 
 	
 	include('session.php');
+	include('studentsession.php');
     include('studentnavbar.php');
     include('footer.php');
  ?>
