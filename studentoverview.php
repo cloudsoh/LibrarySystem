@@ -158,7 +158,7 @@ The Library
               </div>
 
             </div>
-  <?php $no++;}}else{echo "ERROR";}?>
+  <?php $no++;}}else{}?>
     </div></td>
         </tr>
       </tbody>
