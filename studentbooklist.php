@@ -1,6 +1,43 @@
   <?php 
     include('studentheader.php');
   ?>
+  <script>
+var lastSearch = "";
+function showResult(str,page) {
+  if (str.length==0) { 
+    document.getElementById("livesearch").innerHTML="";
+    document.getElementById("livesearch").style.border="0px";
+    // return;
+  }
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else {  // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+      document.getElementById("livesearch").innerHTML=xmlhttp.responseText;
+      // document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+    }
+  }
+  var i = 1;
+  lastSearch = str;
+  if(page==null){
+    page=1;
+  }
+  xmlhttp.open("GET","livesearch.php?q="+str+"&page="+page,true);
+  xmlhttp.send();
+}
+$(document).ready(function(){
+$("a").click(function(){
+    i=$(this).data("value");
+    showResult(lastSearch,i);
+  })
+})
+</script>
+<body onload="showResult('')">
+
  <div class="hc aps">
         <div class="apa">
   <div class="apb">
@@ -19,7 +56,7 @@
 <div class="akg ue">
   <div class="akh aki">
     <div class="tn aol">
-      <input type="text" class="form-control aqr" placeholder="Search books">
+      <input type="text" class="form-control aqr" placeholder="Search books" onkeyup="showResult(this.value)" autofocus>
       <span class="bv adn"></span><!--search the book from the name/code/author/publisher/genre -->
     </div>
   </div>
@@ -27,67 +64,38 @@
 <div class="ud">
   <div class="eg">
     <table class="cl" data-sort="table">
-      <thead>
-        <tr>
-          <th>No.</th>
-          <th>Book code</th>
-          <th>Book Name</th>
-          <th>Author</th>
-          <th>Publisher</th>
-          <th>Genre</th>
-          <th>Publish Date</th>
-          <th>Status</th>
-          <th>Function</th>
-        </tr>
-      </thead>
+      
       <tbody>
-        <?php
-        $num_rec_per_page=5;//numbers of elemenet u wan in page
-        include('config.php');
-        if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; }; //set default element 0
-        $start_from = ($page-1) * $num_rec_per_page;//set which element start from
-        $sql = "SELECT * FROM books LIMIT $start_from, $num_rec_per_page"; 
+      <span id="livesearch">
+      </span>
 
-        $result = $conn->query($sql); //run the query
-        // echo $sql;
-        $no=$start_from+1;//set No.
-        if($result->num_rows>0){
-        while($rows = $result->fetch_assoc()){
-        ?> 
-        <tr>
-          <td><?php echo $no;?></td>
-          <td><?php echo $rows['bookID'];?></td>
-          <td><?php echo $rows['bookName'];?></td>
-          <td><?php echo $rows['author'];?></td>
-          <td><?php echo $rows['publisher'];?></td>
-          <td><?php echo $rows['genre'];?></td>
-          <td><?php echo $rows['publishdate'];?></td><!-- available/borrowed -->
-          <td><?php if(isset($rows['lenderID'])){
-           echo "OUT";}else{ echo "AVAILABLE";}?></td>
-          <td>
-  <div class="akh">
-    <div class="nz">
-      <a href="#docsModal1" data-toggle="modal" class="ce apn">
-                  View
-        </a><!--Edit the book-->
-    </div>
-
-  </div>
-  <?php $no++;}}else{echo "ERROR";}?>
-</div></td>
-        </tr>
       </tbody>
     </table>
+</div>
   </div>
 </div>
-
 <div class="db">
   <ul class="ow">
-    <li class="active"><a href="#">1</a></li>
+<?php 
+$sql = "SELECT * FROM books"; 
+$num_rec_per_page=5;//numbers of elemenet u wan in page
+$result = $conn->query($sql); //run the query
+$total_records = $result->num_rows;  //count number of records
+$total_pages = ceil($total_records / $num_rec_per_page); //get smallest integer after integer
+
+echo "<li><a href='#' data-value='1'>".'First'."</a></li> "; // Goto 1st page  
+
+for ($i=1; $i<=$total_pages; $i++) { 
+            echo "<li><a href='#' data-value='$i'>".$i."</a></li> "; 
+}; 
+echo "<li><a href='#' data-value='$total_pages'>".'Last'."</a></li></div> "; // Goto last page
+?>
+
+    <!-- <li class="active"><a href="#">1</a></li>
     <li><a href="#">2</a></li>
     <li><a href="#">3</a></li>
     <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li><!-- using php calculate how many book in 1 page and could put how many pages -->
+    <li><a href="#">5</a></li> -->
   </ul>
 </div>
 
@@ -145,40 +153,3 @@
     </div>
   </div>
 </div>
-<?php
-$num_rec_per_page=5;//numbers of elemenet u wan in page
-
-if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; }; //set default element 0
-$start_from = ($page-1) * $num_rec_per_page;//set which element start from
-$sql = "SELECT * FROM books LIMIT $start_from, $num_rec_per_page"; 
-$rs_result = mysql_query ($sql); //run the query
-$no=$start_from+1;//set No.
-while ($row = mysql_fetch_assoc($rs_result)) { 
-?> 
-           <tr>
-              <td><?php echo $no ?></td>
-              <td><?php echo $row['bookID'];?></td>
-              <td><a href="details.php?details=<?php echo $row['bookID']?>"><?php echo $row['bookName'];?></a></td>
-              <td><?php echo $row['author'];?></td>
-              <td><?php echo $row['publisher'];?></td>
-              <td><?php echo $row['genre'];?></td>
-            </tr>
-<?php 
-$no++;}; 
-?> 
-</tbody>
-</table>
-</div>
-<?php 
-$sql = "SELECT * FROM books"; 
-$rs_result = mysql_query($sql); //run the query
-$total_records = mysql_num_rows($rs_result);  //count number of records
-$total_pages = ceil($total_records / $num_rec_per_page); //get smallest integer after integer
-
-echo "<div style='float:right'><a href='list.php?page=1'>".'First'."</a> "; // Goto 1st page  
-
-for ($i=1; $i<=$total_pages; $i++) { 
-            echo "<a href='list.php?page=".$i."'>".$i."</a> "; 
-}; 
-echo "<a href='list.php?page=$total_pages'>".'Last'."</a></div> "; // Goto last page
-?>
