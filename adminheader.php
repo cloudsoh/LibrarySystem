@@ -1,5 +1,6 @@
 <?php 
 	include('session.php');
+	include('adminsession.php');
     include('adminnavbar.php');
     include('footer.php');
  ?>
