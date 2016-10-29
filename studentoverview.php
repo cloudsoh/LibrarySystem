@@ -79,90 +79,92 @@ The Library
 </div>
 
 <hr class="aky">
+<div class="ud">
+  <div class="eg">
+    <table class="cl" data-sort="table">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Book code</th>
+          <th>Book Name</th>
+          <th>Times</th>
+          <th>Function</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+          require_once('config.php');
+          $studid=$_SESSION['userid'];
+          $sql="SELECT * FROM books WHERE lenderID = $studid";
+          $result=$conn->query($sql);
+          $no=1;
+          if($result->num_rows>0){
+            while ($rows = $result->fetch_assoc()) {
+        ?> 
+        <tr>
+          <td><?php echo $no;?></td>
+          <td><?php echo $rows['bookID'];?></td>
+          <td><?php echo $rows['bookName'];?></td>
+          <td><?php 
+                $sessiontime=strtotime($_SESSION['dlenderDate']);
+                if($sessiontime==null){
+                  $sessiontime=$_SESSION['dlenderDate'];
+                  $DTcurrenttime=DateTime::createFromFormat('Y-m-d H:i:sa', $sessiontime);
+                }else{
+                  $sessiontime=date("Y-m-d H:i:sa",$sessiontime);
+                  $DTcurrenttime=DateTime::createFromFormat('Y-m-d H:i:sa', $sessiontime);
+                }
+                $timestamp = $DTcurrenttime->getTimestamp();
+                if($_SESSION['type']==1){
+                  $d=strtotime("+7 day",$timestamp);
+                  $expiredtime=date("Y-m-d H:i:sa",$d);
+                }
+                $currenttime=date("Y-m-d H:i:sa");
+                $currenttime=DateTime::createFromFormat('Y-m-d H:i:sa', $currenttime);
+                $expiredtime=DateTime::createFromFormat('Y-m-d H:i:sa', $expiredtime);
+                $interval = $currenttime->diff($expiredtime);
+                $timeleftformat=('');
+                if($interval->format('%a')>1){
+                  $timeleftformat=$timeleftformat . '%a days ';
+                }else{
+                  $timeleftformat=$timeleftformat . '%a day ';
+                }
+                if($interval->format('%H')>1){
+                  $timeleftformat=$timeleftformat . '%H hours ';
+                }else{
+                  $timeleftformat=$timeleftformat . '%H hour ';
+                }
+                if($interval->format('%i')>1){
+                  $timeleftformat=$timeleftformat . '%i minutes ';
+                }else{
+                  $timeleftformat=$timeleftformat . '%i minute ';
+                }
+                if($interval->format('%s')>1){
+                  $timeleftformat=$timeleftformat . '%s seconds ';
+                }else{
+                  $timeleftformat=$timeleftformat . '%s second ';
+                }
+                  $calcfines=$interval->format('%a');
+                  $fines=($interval->invert ? "RM$calcfines.00" : "--");
+                  $timeleftformat=($interval->invert ? "$timeleftformat expired" : "$timeleftformat left");
+                  echo $interval->format($timeleftformat);
+              ?></td>
+          <td>
+            <div class="akh">
+              <div class="nz">
+                <a href="#" class="ce apn">
+                            Return
+                  </a><!--Edit the book-->
+              </div>
 
-<div class="fu">
-  <div class="gr ali">
-    <div class="by">
-      <h4 class="ty">
-        Most Borrowed Books Categories
-        <!-- Use Php display how many categories and number from book -->
-      </h4>
-      
-        <a class="ph" href="#">
-          <span class="tz" style="width: 62.4%;"></span>
-          <span class="dy dh">62.4%</span>
-          Education
-        </a>
-      
-        <a class="ph" href="#">
-          <span class="tz" style="width: 15.0%;"></span>
-          <span class="dy dh">15.0%</span>
-          Health
-        </a>
-      
-        <a class="ph" href="#">
-          <span class="tz" style="width: 5.0%;"></span>
-          <span class="dy dh">5.0%</span>
-          Math
-        </a>
-      
-        <a class="ph" href="#">
-          <span class="tz" style="width: 5.0%;"></span>
-          <span class="dy dh">5.0%</span>
-          Fantasy
-        </a>
-      
-        <a class="ph" href="#">
-          <span class="tz" style="width: 4.5%;"></span>
-          <span class="dy dh">4.5%</span>
-          Biographies
-        </a>
-      
-        <a class="ph" href="#">
-          <span class="tz" style="width: 2.3%;"></span>
-          <span class="dy dh">2.3%</span>
-          Science
-        </a>
-      
-        <a class="ph" href="#">
-          <span class="tz" style="width: 1.7%;"></span>
-          <span class="dy dh">1.7%</span>
-          Horror
-        </a>
-      
-        <a class="ph" href="#">
-          <span class="tz" style="width: 1.5%;"></span>
-          <span class="dy dh">1.5%</span>
-          Art
-        </a>
-      
-        <a class="ph" href="#">
-          <span class="tz" style="width: 1.4%;"></span>
-          <span class="dy dh">1.4%</span>
-          Children's
-        </a>
-      
-        <a class="ph" href="#">
-          <span class="tz" style="width: 1.2%;"></span>
-          <span class="dy dh">1.2%</span>
-          Mystery
-        </a>
-      
-    </div>
+            </div>
+  <?php $no++;}}else{echo "ERROR";}?>
+    </div></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <div class="gr ali">
-    <div class="by">
-      <h4 class="ty">
-        New Arrivals
-         <!-- Use Php display the newest book from date-->
-      </h4>
-      
-        <a class="ph" href="#">
-        Information Technology
-        </a>
-      
-    </div>
-  </div>
-</div>
     </div><!--close content -->
   </div>
+
+  
