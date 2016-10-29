@@ -1,6 +1,5 @@
          
 <!--login-user-modal-->
-  <form name="form1" method="POST" action="login.php">
   <div class="modal fade" id="login-form-modal" tabindex="-1">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -9,7 +8,7 @@
           <h4 class="modal-title">Sign In</h4>
         </div>
         <div class="modal-body">
-          <form class="form-horizontal" method="POST" action="" id="login-form" name="login-form">
+          <form class="form-horizontal" method="POST" action="login.php" id="login-form" name="login-form">
             <div class="form-group">
               <label for="log-name" class="control-label col-md-2">Username: </label>
               <div class="col-md-10">
@@ -37,9 +36,7 @@
       </div>
     </div>  
   </div>
-  </form>
   <!--sign-up-modal-->
-  <form name="form2" method="POST" action="register.php">
   <div class="modal fade" id="signup-form-modal" tabindex="-2">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -48,7 +45,7 @@
           <h4 class="modal-title">Sign Up</h4>
         </div>
         <div class="modal-body">
-          <form class="form-horizontal" method="POST" action="" id="signup-form" name="signup-form">
+          <form class="form-horizontal" method="POST" action="register.php" id="signup-form" name="signup-form">
             <div class="form-group">
               <label for="username" class="control-label col-md-2">Username&nbsp;<span style="color: red;">*</span>: </label>
               <div class="col-md-10">
@@ -106,4 +103,3 @@
       </div>
     </div>
   </div>
-  </form>
