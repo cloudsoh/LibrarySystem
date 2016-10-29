@@ -50,7 +50,7 @@ if($_SESSION['flash']=="a"){
                                     <img src="img/samples/sample1.png" alt="">
                                 </div>
                                 <div class="tp-caption large_white_bold sft" data-x="520" data-y="center" data-hoffset="0" data-voffset="-120" data-speed="500" data-start="1200" data-easing="Power4.easeOut">
-                                    <h1>.welcome</h1>
+                                    <h1>welcome</h1>
                                 </div>
                                 <div class="tp-caption large_white_light sfb" data-x="520" data-y="center" data-hoffset="0" data-voffset="10" data-speed="1000" data-start="1300" data-easing="Power4.easeOut">
                                     Today Promote Book
@@ -69,7 +69,7 @@ if($_SESSION['flash']=="a"){
                                     <img src="img/samples/sample2.jpg" alt="">
                                 </div>
                                 <div class="tp-caption large_white_bold sft" data-x="520" data-y="center" data-hoffset="0" data-voffset="-120" data-speed="500" data-start="1200" data-easing="Power4.easeOut">
-                                    <h1>.welcome</h1>
+                                    <h1>welcome</h1>
                                 </div>
                                 <<div class="tp-caption large_white_light sfb" data-x="520" data-y="center" data-hoffset="0" data-voffset="10" data-speed="1000" data-start="1300" data-easing="Power4.easeOut">
                                     Most Popular Book
@@ -88,7 +88,7 @@ if($_SESSION['flash']=="a"){
                                     <img src="img/samples/sample3.jpg" alt="">
                                 </div>
                                 <div class="tp-caption large_white_bold sft" data-x="520" data-y="center" data-hoffset="0" data-voffset="-120" data-speed="500" data-start="1200" data-easing="Power4.easeOut">
-                                    <h1>.welcome</h1>
+                                    <h1>welcome</h1>
                                 </div>
                                 <div class="tp-caption large_white_light sfb" data-x="520" data-y="center" data-hoffset="0" data-voffset="10" data-speed="1000" data-start="1300" data-easing="Power4.easeOut">
                                     New Arrivals
@@ -189,6 +189,11 @@ include('modal.php')
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="go-down1">
+                <a href="#about">
+                    <i class="fa fa-angle-down fa-3x"></i>
+                </a>
             </div>
         </section>
 

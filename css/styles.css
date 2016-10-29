@@ -1419,3 +1419,12 @@ canvas {
   background: #555555;
   border-color: #555555;
 }
+.go-down1 {
+  position: absolute;
+  bottom: 20px;
+  right: 49.2%;
+  z-index: 999;
+}
+.go-down1 a {
+  color: black;
+}
