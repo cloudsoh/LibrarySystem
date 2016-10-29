@@ -11,7 +11,7 @@
   <div class="ob ape">
     <div class="tn aol">
       <input type="text" value="01/01/15 - 01/08/15" class="form-control" data-provide="datepicker">
-      <span class="bv wt"></span><!--search the book from the insert date     -->
+      <span class="bv wt"></span><!--search the book from the insert date-->
     </div>
   </div>
 </div>
