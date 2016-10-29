@@ -35,21 +35,35 @@
           <th>Author</th>
           <th>Publisher</th>
           <th>Genre</th>
+          <th>Publish Date</th>
           <th>Status</th>
-          <th>Remaining date</th>
           <th>Function</th>
         </tr>
       </thead>
       <tbody>
+        <?php
+        $num_rec_per_page=5;//numbers of elemenet u wan in page
+        include('config.php');
+        if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; }; //set default element 0
+        $start_from = ($page-1) * $num_rec_per_page;//set which element start from
+        $sql = "SELECT * FROM books LIMIT $start_from, $num_rec_per_page"; 
+
+        $result = $conn->query($sql); //run the query
+        // echo $sql;
+        $no=$start_from+1;//set No.
+        if($result->num_rows>0){
+        while($rows = $result->fetch_assoc()){
+        ?> 
         <tr>
-          <td>1</td>
-          <td>10001</td>
-          <td>First Last</td>
-          <td>Abc</td>
-          <td>Abc Publisher</td>
-          <td>education</td>
-          <td>Available</td><!-- available/borrowed -->
-          <td>5days</td>
+          <td><?php echo $no;?></td>
+          <td><?php echo $rows['bookID'];?></td>
+          <td><?php echo $rows['bookName'];?></td>
+          <td><?php echo $rows['author'];?></td>
+          <td><?php echo $rows['publisher'];?></td>
+          <td><?php echo $rows['genre'];?></td>
+          <td><?php echo $rows['publishdate'];?></td><!-- available/borrowed -->
+          <td><?php if(isset($rows['lenderID'])){
+           echo "OUT";}else{ echo "AVAILABLE";}?></td>
           <td>
   <div class="akh">
     <div class="nz">
@@ -57,7 +71,9 @@
                   View
         </a><!--Edit the book-->
     </div>
+
   </div>
+  <?php $no++;}}else{echo "ERROR";}?>
 </div></td>
         </tr>
       </tbody>
@@ -129,3 +145,40 @@
     </div>
   </div>
 </div>
+<?php
+$num_rec_per_page=5;//numbers of elemenet u wan in page
+
+if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; }; //set default element 0
+$start_from = ($page-1) * $num_rec_per_page;//set which element start from
+$sql = "SELECT * FROM books LIMIT $start_from, $num_rec_per_page"; 
+$rs_result = mysql_query ($sql); //run the query
+$no=$start_from+1;//set No.
+while ($row = mysql_fetch_assoc($rs_result)) { 
+?> 
+           <tr>
+              <td><?php echo $no ?></td>
+              <td><?php echo $row['bookID'];?></td>
+              <td><a href="details.php?details=<?php echo $row['bookID']?>"><?php echo $row['bookName'];?></a></td>
+              <td><?php echo $row['author'];?></td>
+              <td><?php echo $row['publisher'];?></td>
+              <td><?php echo $row['genre'];?></td>
+            </tr>
+<?php 
+$no++;}; 
+?> 
+</tbody>
+</table>
+</div>
+<?php 
+$sql = "SELECT * FROM books"; 
+$rs_result = mysql_query($sql); //run the query
+$total_records = mysql_num_rows($rs_result);  //count number of records
+$total_pages = ceil($total_records / $num_rec_per_page); //get smallest integer after integer
+
+echo "<div style='float:right'><a href='list.php?page=1'>".'First'."</a> "; // Goto 1st page  
+
+for ($i=1; $i<=$total_pages; $i++) { 
+            echo "<a href='list.php?page=".$i."'>".$i."</a> "; 
+}; 
+echo "<a href='list.php?page=$total_pages'>".'Last'."</a></div> "; // Goto last page
+?>
