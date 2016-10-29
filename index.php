@@ -192,11 +192,6 @@ include('modal.php')
                     </div>
                 </div>
             </div>
-            <div class="go-down1">
-                <a href="#about">
-                    <i class="fa fa-angle-down fa-3x"></i>
-                </a>
-            </div>
         </section>
 
         <section id="about">
