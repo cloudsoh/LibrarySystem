@@ -8,7 +8,6 @@ $result=$conn->query($sql);
 $count=$result->num_rows;
 while($row=$result->fetch_assoc()){
 	$login_user=$row['username'];
-	$_SESSION['type']=$row['type'];	
 }
 
 if(!isset($_SESSION['username'])){
