@@ -5,6 +5,7 @@ include('header.php');
 <body>
 <?php 
 session_start();
+if(isset($_SESSION['flash'])){
 if(($_SESSION['flash'])!=null){
 if($_SESSION['flash']=="a"){
     $_SESSION['flash']=null;
@@ -15,6 +16,7 @@ if($_SESSION['flash']=="a"){
 }
 }else{
 
+}
 }
 ?>
     <div class="pre-loader">
