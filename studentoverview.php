@@ -1,11 +1,11 @@
  <?php 
-    include('memberheader.php');
+    include('studentheader.php');
   ?>
       <div class="hc aps">
         <div class="apa">
   <div class="apb">
-    <h6 class="apd">Student</h6>
-    <h2 class="apc">Overview</h2>
+    <h6 class="apd">Overview</h6>
+    <h2 class="apc">Welcome <?php echo $_SESSION['username'];?></h2>
   </div>
 </div>
 
