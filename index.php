@@ -110,7 +110,7 @@ include('modal.php')
                     </div>
                     <div class="col-md-6">
                         <div class="media scrollpoint sp-effect2">
-                            <a class="pull-left" href="#">
+                            <a class="pull-left">
                                 <i class="media-object fa fa-star fa-4x"></i>
                             </a>
                             <div class="media-body">
@@ -126,7 +126,7 @@ include('modal.php')
                             </div>
                         </div>
                         <div class="media scrollpoint sp-effect2">
-                            <a class="pull-left" href="#">
+                            <a class="pull-left">
                                 <i class="media-object fa fa-support fa-4x"></i>
                             </a>
                             <div class="media-body">
@@ -144,7 +144,7 @@ include('modal.php')
                     </div>
                     <div class="col-md-6">
                         <div class="media right scrollpoint sp-effect1">
-                            <a class="pull-right" href="#">
+                            <a class="pull-right">
                                 <i class="media-object fa fa-send fa-4x"></i>
                             </a>
                             <div class="media-body">
@@ -160,7 +160,7 @@ include('modal.php')
                             </div>
                         </div>
                         <div class="media right scrollpoint sp-effect1">
-                            <a class="pull-right" href="#">
+                            <a class="pull-right">
                                 <i class="media-object fa fa-slack fa-4x"></i>
                             </a>
                             <div class="media-body">
@@ -184,7 +184,7 @@ include('modal.php')
                 <div class="row">
                     <div class="col-md-8 col-md-push-2 clearfix">
                         <div class="section-heading scrollpoint sp-effect3">
-                            <h1>.about <span>library</span>
+                            <h1>about <span>library</span>
                             </h1>
                             <h4>The missions of Southern UC Library are to support the teaching and research needs of Southern UC members by providing various library materials that encompass books, periodicals, E-resources, audio-visual materials and Southern UC’s publications; and to provide teaching support to foster reading habits and research interests among Southern UC community. Besides the collections for teaching purposes, Southern UC Library houses one of the richest Chinese book collections in Malaysia, especially the publications of China, Hong Kong and Taiwan, and the historical data of Singapore, Malaysia as well as Southeast Asia. </h4>
                             <span class="divider"></span>
