@@ -97,7 +97,7 @@
         </div>
         <div class="modal-footer">
           <span style="color: red;">* is require to fill.</span>
-          <button type="submit" class="btn btn-info" form="signup-form">Sign Up</button>
+          <button type="submit" name="submit" class="btn btn-info" form="signup-form">Sign Up</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
