@@ -1,5 +1,5 @@
 <?php 
-    include('membernavbar.php');
+    include('studentnavbar.php');
     include('footer.php');
  ?>
 <!DOCTYPE html>
