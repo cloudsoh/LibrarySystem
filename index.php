@@ -248,9 +248,9 @@ include('modal.php')
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <form>
+                        <form action="message.php" method="POST" id="message_form">
                             <div class="form-group has-feedback left">
-                                <textarea class="form-control" rows="7" placeholder="MESSAGE"></textarea>
+                                <textarea class="form-control" rows="7" name="message" form="message_form" placeholder="MESSAGE"></textarea>
                                 <i class="fa fa-pencil-square-o form-control-feedback"></i>
                             </div>
                             <button class="btn btn-primary btn-lg pull-right" type="submit">SUBMIT</button>
