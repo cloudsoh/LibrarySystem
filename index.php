@@ -117,10 +117,10 @@ include('modal.php')
                                 <h4 class="media-heading">About the Library</h4>
                                 <div class="col-md-8">
                                 <ul>
-                                    <li><a href="">Introduction</a></li>
-                                    <li><a href="">Organization</a></li>
-                                    <li><a href="">Openning Hour</a></li>
-                                    <li><a href="">Library Guidelines</a></li>
+                                    <li><a href="http://www.southern.edu.my/lib/index.php?option=com_content&view=article&id=56&Itemid=153&lang=en">Introduction</a></li>
+                                    <li><a href="http://www.southern.edu.my/lib/index.php?option=com_content&view=article&id=11&Itemid=154&lang=en">Organization</a></li>
+                                    <li><a href="http://www.southern.edu.my/lib/index.php?option=com_content&view=article&id=108&Itemid=155&lang=en">Openning Hour</a></li>
+                                    <li><a href="http://www.southern.edu.my/lib/index.php?option=com_content&view=category&id=46&Itemid=161&lang=en">Library Guidelines</a></li>
                                 </ul>
                                 </div>
                             </div>
@@ -133,11 +133,10 @@ include('modal.php')
                                 <h4 class="media-heading">Library Service</h4>
                                 <div class="col-md-8">
                                 <ul>
-                                    <li><a href="">Services</a></li>
-                                    <li><a href="">MyLibrary</a></li>
-                                    <li><a href="">Reference Service</a></li>
-                                    <li><a href="">Teaching Support Area</a></li>
-                                    <li><a href="">External Membership</a></li>
+                                    <li><a href="http://www.southern.edu.my/lib/index.php?option=com_content&view=article&id=70&Itemid=188&lang=en">Services</a></li>
+                                    <li><a href="http://www.southern.edu.my/lib/index.php?option=com_content&view=article&id=127&Itemid=195&lang=en">Reference Service</a></li>
+                                    <li><a href="http://www.southern.edu.my/lib/index.php?option=com_content&view=article&id=133&Itemid=196&lang=en">Teaching Support Area</a></li>
+                                    <li><a href="http://www.southern.edu.my/lib/index.php?option=com_content&view=article&id=134&Itemid=202&lang=en">External Membership</a></li>
                                 </ul>
                                 </div>
                             </div>
@@ -168,8 +167,8 @@ include('modal.php')
                                 <h4 class="media-heading">Sister Library</h4>
                                 <div class="col-md-8 pull-right">
                                 <ul>
-                                    <li><a href="">Shanghai Jiao Tong University School of medicine Library</a></li>
-                                    <li><a href="">Taipei Medical University Library</a></li>
+                                    <li><a href="http://lib.shsmu.edu.cn/">Shanghai Jiao Tong University School of medicine Library</a></li>
+                                    <li><a href="http://library.tmu.edu.tw/v2/index.asp">Taipei Medical University Library</a></li>
                                     
                                 </ul>
                                 </div>
