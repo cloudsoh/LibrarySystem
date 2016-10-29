@@ -14,10 +14,10 @@
             <ul class="nav of nav-stacked">
               <li class="tq">Member Function</li>
               <li>
-                <a href="memberoverview.php">Overview</a>
+                <a href="studentoverview.php">Overview</a>
               </li>
               <li >
-                <a href="memberbooklist.php">Book list</a>
+                <a href="studentbooklist.php">Book list</a>
               </li>
 
             </ul>
