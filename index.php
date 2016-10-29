@@ -152,7 +152,7 @@ include('modal.php')
                                 <h4 class="media-heading">E-resources</h4>
                                 <div class="col-md-8 pull-right">
                                 <ul>
-                                    <li><a href="">Databases</a></li>
+                                    <li><a href="http://www.southern.edu.my/lib/index.php?option=com_content&view=article&id=237&Itemid=207&lang=en">Databases</a></li>
                                     <li><a href="">E-journals</a></li>
                                     <li><a href="">Online Reference Resources</a></li>
                                     <li><a href="">Past Year Exam Paper</a></li>
@@ -227,7 +227,7 @@ include('modal.php')
                             <div class="detail">
                                 <ul class="clearfix">
                                     
-                                    <li><a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+                                    <li><a href="https://www.facebook.com/SouthernUC.Lib"><i class="fa fa-facebook fa-2x"></i></a>
                                     </li>
                                 </ul>
                             </div>
