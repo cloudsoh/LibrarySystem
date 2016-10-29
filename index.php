@@ -153,9 +153,9 @@ include('modal.php')
                                 <div class="col-md-8 pull-right">
                                 <ul>
                                     <li><a href="http://www.southern.edu.my/lib/index.php?option=com_content&view=article&id=237&Itemid=207&lang=en">Databases</a></li>
-                                    <li><a href="">E-journals</a></li>
-                                    <li><a href="">Online Reference Resources</a></li>
-                                    <li><a href="">Past Year Exam Paper</a></li>
+                                    <li><a href="http://www.southern.edu.my/lib/index.php?option=com_content&view=article&id=240&Itemid=209&lang=en">E-journals</a></li>
+                                    <li><a href="http://www.southern.edu.my/lib/index.php?option=com_content&view=article&id=128&Itemid=208&lang=en">Online Reference Resources</a></li>
+                                    <li><a href="http://www.southern.edu.my/lib/index.php?option=com_wrapper&view=wrapper&Itemid=210&lang=en">Past Year Exam Paper</a></li>
                                 </ul>
                                 </div>
                             </div>
