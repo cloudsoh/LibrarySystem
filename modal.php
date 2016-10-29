@@ -30,7 +30,7 @@
           </form>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-info">Sign In</button>
+          <button type="submit" class="btn btn-info" form="login-form">Sign In</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
@@ -97,7 +97,7 @@
         </div>
         <div class="modal-footer">
           <span style="color: red;">* is require to fill.</span>
-          <button type="submit" class="btn btn-info">Sign Up</button>
+          <button type="submit" class="btn btn-info" form="signup-form">Sign Up</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
