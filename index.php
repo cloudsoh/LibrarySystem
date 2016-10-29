@@ -3,7 +3,20 @@ include('header.php');
 
  ?>
 <body>
+<?php 
+session_start();
+if(($_SESSION['flash'])!=null){
+if($_SESSION['flash']=="a"){
+    $_SESSION['flash']=null;
+    echo "<script>alert('Successfully Register!!')</script>";
+}else if($_SESSION['flash']=="b"){
+    $_SESSION['flash']=null;
+    echo "<script>alert('Username is existed!!')</script>";
+}
+}else{
 
+}
+?>
     <div class="pre-loader">
         <div class="load-con">
             <img src="img/logo-orange.png" class="animated fadeInDown" alt="">
