@@ -63,7 +63,7 @@ if(strlen($q)>=0)
     <div class='nz'>
       <button data-target='#docsModal3' class='ce apn' data-toggle='modal' data-bid='".$rows['bookID']."' data-name='".$rows['bookName']."' data-author='".$rows['author']."' data-publisher='".$rows['publisher']."' data-genre='".$rows['genre']."'>Edit</button>
       <button class='ce apn' data-target='#docsModal1' data-toggle='modal' data-bid='".$rows['bookID']."' data-image='".$image."' data-bName='".$rows['bName']."'>Borrow</button>
-      <a href='delete.php?bid=".$rows['bookID']."' class='ce apn'>
+      <a href='delete.php?bid=".$rows['bookID']."' class='ce apn' onclick=\"return confirm('Are you sure?')\">
             Delete
       </a>  
   </div>
