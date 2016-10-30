@@ -21,7 +21,7 @@ if($_SESSION['flash']=="a"){
 ?>
     <div class="pre-loader">
         <div class="load-con">
-            <img src="img/logo-orange.png" class="animated fadeInDown" alt="">
+            <img src="img/Lib1.png" class="animated fadeInDown" alt="">
             <div class="spinner">
                 <div class="bounce1"></div>
                 <div class="bounce2"></div>
