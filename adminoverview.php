@@ -30,7 +30,7 @@
           <td>".$row['content']."</td>
           <td>".$row['date']."</td>
           <td>
-          <a href='removeMessage.php?id=".$row['id']."'>Remove</a>
+          <a class=\"ce apn\"href='removeMessage.php?id=".$row['id']."'>Remove</a>
           </td>
           </tr>";
       }
