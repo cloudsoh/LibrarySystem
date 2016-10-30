@@ -146,7 +146,7 @@
         <h4 class="modal-title" id="myModalLabel">Book Detail</h4>
       </div>
       <div class="modal-body">
-        <form class="form-horizontal" method="POST" action="" id="borrow-form" name="borrow-form">
+        <form class="form-horizontal" method="POST" action="borrow.php" id="borrow-form" name="borrow-form">
           <img src="" alt="NO IMAGE" width="100%">
           <div class="form-group">
             <label for="bookID" class="control-label col-md-2">Book code: </label>
@@ -163,7 +163,7 @@
         </form>
       </div>
       <div class="rj">
-        <button type="submit" id="borrow" class="ce apo" form="borrowborrow-form">Borrow</button>
+        <button type="submit" id="borrow" class="ce apo" form="borrow-form">Borrow</button>
         <a href="" id="return" class="ce apo">Return</a>
         <button type="button" class="ce apo" data-dismiss="modal">Close</button>
       </div>
