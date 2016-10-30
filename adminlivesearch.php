@@ -14,7 +14,7 @@ if(strlen($q)>=0)
     include('config.php');
     if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; }; //set default element 0
     $start_from = ($page-1) * $num_rec_per_page;//set which element start from
-	$sql = "SELECT * FROM books WHERE bookID LIKE '%$q%' OR bookName LIKE '%$q%' OR author LIKE '%$q%' OR publisher LIKE '%$q%' OR genre LIKE '%$q%' LIMIT $start_from, $num_rec_per_page";
+	$sql = "SELECT * FROM books WHERE bookID LIKE '%$q%' OR bookName LIKE '%$q%' OR author LIKE '%$q%' OR publisher LIKE '%$q%' LIMIT $start_from, $num_rec_per_page";
 
 	$result = $conn->query($sql);
 
@@ -33,7 +33,6 @@ if(strlen($q)>=0)
           <th>Book Name</th>
           <th>Author</th>
           <th>Publisher</th>
-          <th>Genre</th>
           <th>Borrower</th>
           <th>Borrow Date</th>
           <th>Function</th>
@@ -56,7 +55,6 @@ if(strlen($q)>=0)
           <td>".$rows['bookName']."</td>
           <td>".$rows['author']."</td>
           <td>".$rows['publisher']."</td>
-          <td>".$rows['genre']."</td>
           <td>".$rows['lenderID']."</td><!-- available/borrowed -->
           <td>".$rows['lenderDate']."</td>
           <td>
