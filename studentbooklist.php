@@ -137,10 +137,6 @@ echo "<li><a href='#' data-value='$total_pages'>".'Last'."</a></li></div> "; // 
         <img src="" alt="NO IMAGE">
         <p id="introduction"></p>
       </div>
-      <div class="rj">
-        <button type="submit" class="ce apo" data-dismiss="modal">Borrow</button>
-        <button type="button" class="ce apo" data-dismiss="modal">Close</button>
-      </div>
     </div>
   </div>
 </div>

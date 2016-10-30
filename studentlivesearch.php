@@ -63,7 +63,7 @@ if(strlen($q)>=0)
           <td>
   <div class='akh'>
     <div class='nz'>
-      <button class='btn btn-primary' data-toggle='modal' data-target='#docsModal1' data-name='".$rows['bookName']."' data-image='".$rows['image']."' data-introduction='".$rows['introduction']."' >View</button>
+      <a href='#docsModal1' class='ce apn' data-toggle='modal' data-name='".$rows['bookName']."' data-image='".$rows['image']."' data-introduction='".$rows['introduction']."' >View</a>
   </div>
 
   </div>
