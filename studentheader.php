@@ -2,8 +2,8 @@
 	
 	include('session.php');
 	include('studentsession.php');
-    include('studentnavbar.php');
-    include('footer.php');
+    
+    
  ?>
 <!DOCTYPE html>
 <html>
@@ -29,3 +29,7 @@
 	}
 </style>
 </head>
+<?php
+include('studentnavbar.php');
+include('footer.php');
+?>

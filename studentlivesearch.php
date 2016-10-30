@@ -19,15 +19,13 @@ if(strlen($q)>=0)
 	$result = $conn->query($sql);
 	$hints = array();
   if(isset($_GET['bID'])){
-    echo "HI BID";
+    // echo "HI BID";
     
     $id=$_SESSION['userid'];
     $bookID=$_GET['bID'];
     $notifysql="INSERT INTO notification (id,bookID) VALUES ($id,$bookID)";
     if ($conn->query($notifysql) === TRUE) {
-      $_SESSION['notify']="ASD";
-    }else{
-      $_SESSION['notify']="ASD";
+       
     }
   }
 	$tabletop="

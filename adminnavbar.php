@@ -19,6 +19,9 @@
               <li >
                 <a href="adminbooklist.php">Book list</a>
               </li>
+              <li>
+                <a href="signout.php">Sign out</a>
+              </li>
             </ul>
             <hr class="rw aky">
           </div>
