@@ -43,11 +43,12 @@ if(strlen($q)>=0)
 	$no = 1;
 	while($rows = $result->fetch_assoc())
 	{
-		
-    $image=$rows['image'];
-    if(!isset($rows['image'])){
-        $image="img/books/noimg.png";
-    }
+		$image="img/books/";
+    $image.=$rows['bookID'];
+    $image.=".jpg";
+    // if(!isset($rows['image'])){
+    //     $image="img/books/noimg.png";
+    // }
 		//$id = $rows['id'];
 	$hint = " <tr>
           <td>".$no."</td>
