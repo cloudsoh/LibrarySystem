@@ -13,14 +13,36 @@
   <h3 class="anw anx">Library News/Notices</h3>
 </div>
 <div class="fu db aln">
-      
-<p>Dear all reader,
+<?php
+    $sql="SELECT * FROM feedback";
+      $result = $conn->query($sql); //run the query
+      $total_records = $result->num_rows;
+      if($total_records>0){
+        echo "o0o<table>
+          <tr>
+          <td>Content</td>
+          <td>Time</td>
+          <td></td>
+          </tr>";
+        while ($row = $result->fetch_assoc()) {
+          echo "
+          <tr>
+          <td>".$row['content']."</td>
+          <td>".$row['date']."</td>
+          <td>
+          <a href='removeMessage.php?id=".$row['id']."'>Remove</a>
+          </td>
+          </tr>";
+      }
+    }else{
+      echo "<p>Dear all reader,
 For any latest news or notices, please refer to our library website : 
-<a href="http://lib.sc.edu.my/">http://lib.sc.edu.my/</a>
+<a href=\"http://lib.sc.edu.my/\">http://lib.sc.edu.my/</a>
 ,Thanks.
 <br>
-The Library
-</p>
+The Library</p>";
+    }
+    ?>
 </div>
 
 <div class="anv alg ala">

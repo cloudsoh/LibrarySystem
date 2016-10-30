@@ -54,12 +54,12 @@ if($_SESSION['flash']=="a"){
                                 <div class="tp-caption large_white_bold sft" data-x="520" data-y="center" data-hoffset="0" data-voffset="-120" data-speed="500" data-start="1200" data-easing="Power4.easeOut">
                                     <h1>most popular book</h1>
                                 </div>
-                                <div class="tp-caption large_white_light sfb" data-x="520" data-y="center" data-hoffset="0" data-voffset="10" data-speed="1000" data-start="1300" data-easing="Power4.easeOut">
+                                <!-- <div class="tp-caption large_white_light sfb" data-x="520" data-y="center" data-hoffset="0" data-voffset="10" data-speed="1000" data-start="1300" data-easing="Power4.easeOut">
                                     Today Promote Book
-                                </div>
-                                <div class="tp-caption sfb hidden-xs" data-x="520" data-y="center" data-hoffset="0" data-voffset="150" data-speed="1000" data-start="1700" data-easing="Power4.easeOut">
+                                </div> -->
+                                <!-- <div class="tp-caption sfb hidden-xs" data-x="520" data-y="center" data-hoffset="0" data-voffset="150" data-speed="1000" data-start="1700" data-easing="Power4.easeOut">
                                     <a href="#about" class="btn btn-primary btn-lg">View detail</a>
-                                </div>
+                                </div> -->
                             </li>
                             <li data-transition="slotfade-horizontal" data-slotamount="7" data-masterspeed="500">
                                 <!-- MAIN IMAGE -->
@@ -71,14 +71,14 @@ if($_SESSION['flash']=="a"){
                                     <img src="img/samples/sample2.jpg" alt="">
                                 </div>
                                 <div class="tp-caption large_white_bold sft" data-x="520" data-y="center" data-hoffset="0" data-voffset="-120" data-speed="500" data-start="1200" data-easing="Power4.easeOut">
-                                    <h1>welcome</h1>
+                                    <h1>New Arrivals</h1>
                                 </div>
-                                <<div class="tp-caption large_white_light sfb" data-x="520" data-y="center" data-hoffset="0" data-voffset="10" data-speed="1000" data-start="1300" data-easing="Power4.easeOut">
+                                <!-- <div class="tp-caption large_white_light sfb" data-x="520" data-y="center" data-hoffset="0" data-voffset="10" data-speed="1000" data-start="1300" data-easing="Power4.easeOut">
                                     Most Popular Book
-                                </div>
-                                <div class="tp-caption sfb hidden-xs" data-x="520" data-y="center" data-hoffset="0" data-voffset="150" data-speed="1000" data-start="1700" data-easing="Power4.easeOut">
+                                </div> -->
+                                <!-- <div class="tp-caption sfb hidden-xs" data-x="520" data-y="center" data-hoffset="0" data-voffset="150" data-speed="1000" data-start="1700" data-easing="Power4.easeOut">
                                     <a href="#about" class="btn btn-primary btn-lg">View detail</a>
-                                </div>
+                                </div> -->
                             </li>
                             <li data-transition="slotfade-horizontal" data-slotamount="7" data-masterspeed="500">
                                 <!-- MAIN IMAGE -->
@@ -90,14 +90,14 @@ if($_SESSION['flash']=="a"){
                                     <img src="img/samples/sample3.jpg" alt="">
                                 </div>
                                 <div class="tp-caption large_white_bold sft" data-x="520" data-y="center" data-hoffset="0" data-voffset="-120" data-speed="500" data-start="1200" data-easing="Power4.easeOut">
-                                    <h1>welcome</h1>
+                                    <h1>new arrivals</h1>
                                 </div>
-                                <div class="tp-caption large_white_light sfb" data-x="520" data-y="center" data-hoffset="0" data-voffset="10" data-speed="1000" data-start="1300" data-easing="Power4.easeOut">
+                                <!-- <div class="tp-caption large_white_light sfb" data-x="520" data-y="center" data-hoffset="0" data-voffset="10" data-speed="1000" data-start="1300" data-easing="Power4.easeOut">
                                     New Arrivals
-                                </div>
-                                <div class="tp-caption sfb hidden-xs" data-x="520" data-y="center" data-hoffset="0" data-voffset="150" data-speed="1000" data-start="1700" data-easing="Power4.easeOut">
+                                </div> -->
+                                <!-- <div class="tp-caption sfb hidden-xs" data-x="520" data-y="center" data-hoffset="0" data-voffset="150" data-speed="1000" data-start="1700" data-easing="Power4.easeOut">
                                     <a href="#about" class="btn btn-primary btn-lg">View detail</a>
-                                </div>
+                                </div> -->
                             </li>
 
                         </ul>
@@ -266,7 +266,7 @@ include('modal.php')
                 <div class="row">
                     <span class="divider grey"></span>
                     <h4><span>2016</span></h4>
-                    <h5>by <span>Lee yi cheng</span></a>
+                    <h5>by <span>Lee yi cheng & Soh Jun Fu & Ch'ng Zi Heng</span></a>
                     </h5>
                     <a href="#" class="scroll-top">
                         <img src="img/top.png" alt="" class="top">
