@@ -1,8 +1,8 @@
 <?php 
 	include('session.php');
 	include('adminsession.php');
-    include('adminnavbar.php');
-    include('footer.php');
+    
+    
  ?>
 <!DOCTYPE html>
 <html>
@@ -27,3 +27,7 @@
 	}
 </style>
 </head>
+<?php 
+include('adminnavbar.php');
+include('footer.php');
+?>

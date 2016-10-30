@@ -31,10 +31,15 @@
     <div class="gq gg ala">
       <div class="apu ano">
         <div class="alz">
-          <span class="anj">Books</span>
+          <span class="anj">Requested</span>
           <h2 class="ani">
-            12,938
-            <small class="ank anl">5%</small>
+            <?php
+              $sql="SELECT * FROM notification WHERE id='".$_SESSION['userid']."'";
+              $result = $conn->query($sql); //run the query
+              $total_records = $result->num_rows;
+              echo $total_records;
+            ?>
+            <!-- <small class="ank anl">5%</small> -->
           </h2>
           <hr class="ans akt">
         </div>
