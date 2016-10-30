@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 30, 2016 at 08:49 PM
+-- Generation Time: Oct 30, 2016 at 09:41 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -67,6 +67,27 @@ INSERT INTO `books` (`bookID`, `bookName`, `introduction`, `author`, `publisher`
 (150026, 'Noli Me Tangere (Touch Me Not)', 'Noli me tangere, meaning "don''t touch me" or "don''t tread on me",is the Latin version of words spoken, according to John 20:17, by Jesus to Mary Magdalene when she recognized him after his resurrection.\r\n\r\nThe original Koine Greek phrase, ?? ??? ????? (m? mou haptou), is better represented in translation as "cease holding on to me" or "stop clinging to me".', 'José Rizal, Harold Augenbraum', 'Penguin Classics', 'Nation Classic', '2006-06-27', 'Filipino', 29.99, NULL, NULL, 1),
 (150027, 'John Cena: World Wrestling Champ', 'This in-depth biography allows readers an inside look at John Cena''s roots in Massachusetts through the heights of his stardom. Readers will learn many interesting facts about Cenas life before his rise to fame. Fans of action-packed wrestling will love the exciting full-color photographs accompanied by accessible language', 'Tracy Brown', 'The Rosen Publishing Group', 'Wrestle book', '2011-01-01', 'English', 48.99, NULL, NULL, 1),
 (150028, 'WWE John Cena', 'Young wrestling fans can learn about their favorite WWE wrestlers in this DK Readers series, each featuring a WrestleMania champion. Full color.', 'Brian Shields', 'DK Readers', 'Wrestle book', '2009-10-05', 'English', 29.99, NULL, NULL, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `id` int(11) NOT NULL,
+  `content` text NOT NULL,
+  `date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`id`, `content`, `date`) VALUES
+(1, 'asd', '0000-00-00 00:00:00'),
+(2, 'qqq', '0000-00-00 00:00:00'),
+(4, 'asd', '2016-10-31 04:15:28');
 
 -- --------------------------------------------------------
 
@@ -154,6 +175,12 @@ ALTER TABLE `books`
   ADD KEY `bookName` (`bookName`);
 
 --
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `login`
 --
 ALTER TABLE `login`
@@ -180,7 +207,12 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `bookID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=150095;
+  MODIFY `bookID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=150102;
+--
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `login`
 --

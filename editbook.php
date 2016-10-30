@@ -53,7 +53,7 @@ if($uploadOk==1){
 		        echo "<script>alert('Book Detail has Succesfully Edit!');window.location.href='adminbooklist.php';</script>";
 				move_uploaded_file($tmp_name, $target_file);
 		    } else {
-		        echo "<script>alert('Sorry, there was an error uploading your file.');</script>";
+		        echo "<script>alert('Sorry, there was an error uploading your file.');window.location.href='adminbooklist.php';</script>";
 		    }
 		}
 		
