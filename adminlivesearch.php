@@ -14,23 +14,15 @@ if(strlen($q)>=0)
     include('config.php');
     if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; }; //set default element 0
     $start_from = ($page-1) * $num_rec_per_page;//set which element start from
-	$sql = "SELECT * FROM books WHERE bookID LIKE '%$q%' OR bookName LIKE '%$q%' OR author LIKE '%$q%' OR publisher LIKE '%$q%' OR genre LIKE '%$q%' LIMIT $start_from, $num_rec_per_page";
+	$sql = "SELECT * FROM books WHERE bookID LIKE '%$q%' OR bookName LIKE '%$q%' OR author LIKE '%$q%' OR publisher LIKE '%$q%' LIMIT $start_from, $num_rec_per_page";
 
 	$result = $conn->query($sql);
+
 	$hints = array();
-  if(isset($_GET['bID'])){
-    echo "HI BID";
-    
-    $id=$_SESSION['userid'];
-    $bookID=$_GET['bID'];
-    $notifysql="INSERT INTO notification (id,bookID) VALUES ($id,$bookID)";
-    if ($conn->query($notifysql) === TRUE) {
-      $_SESSION['notify']="ASD";
-    }else{
-      $_SESSION['notify']="ASD";
-    }
-  }
+
 	$tabletop="
+	
+
 	<div class='ud'>
   <div class='eg'>
 	<table class='cl' data-sort='table'>
@@ -41,9 +33,8 @@ if(strlen($q)>=0)
           <th>Book Name</th>
           <th>Author</th>
           <th>Publisher</th>
-          <th>Genre</th>
-          <th>Publish Date</th>
-          <th>Status</th>
+          <th>Borrower</th>
+          <th>Borrow Date</th>
           <th>Function</th>
         </tr>
       </thead>
@@ -53,23 +44,6 @@ if(strlen($q)>=0)
 	while($rows = $result->fetch_assoc())
 	{
 		
-		if(isset($rows['lenderID'])){
-      $checksql = "SELECT * FROM notification WHERE id='".$_SESSION['userid']."' AND bookID='".$rows['bookID']."'";
-      $checkresult = $conn->query($checksql);
-      if ($checkresult->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        $temp="<button class='btn btn-danger' >REQUESTED</button>";
-    }
-} else {
-      $temp="<button class='btn btn-danger' id='notify' value='".$rows['bookID']."' data-value='".$rows['bookID']."' onclick='recordNotify(this.value)'>NOTIFY ME</button>";
-}
-      // echo $checksql;
-			
-		}else{
-			$temp="<button class='btn btn-success' disabled>AVAILABLE</button>";
-		}
-
     $image=$rows['image'];
     if(!isset($rows['image'])){
         $image="img/books/noimg.png";
@@ -81,17 +55,23 @@ if(strlen($q)>=0)
           <td>".$rows['bookName']."</td>
           <td>".$rows['author']."</td>
           <td>".$rows['publisher']."</td>
-          <td>".$rows['genre']."</td>
-          <td>".$rows['publishdate']."</td><!-- available/borrowed -->
-          <td>".$temp."</td>
+          <td>".$rows['lenderID']."</td><!-- available/borrowed -->
+          <td>".$rows['lenderDate']."</td>
           <td>
   <div class='akh'>
     <div class='nz'>
-      <button data-target='#docsModal1' class='ce apn' data-toggle='modal' data-name='".$rows['bookName']."' data-image='".$image."' data-introduction='".$rows['introduction']."' >View</button>
+      <button data-target='#docsModal3' class='ce apn' data-toggle='modal' data-bid='".$rows['bookID']."' data-name='".$rows['bookName']."' data-author='".$rows['author']."' data-publisher='".$rows['publisher']."' data-genre='".$rows['genre']."'>Edit</button>
+      <button class='ce apn' data-target='#docsModal1' data-toggle='modal'>Borrow</button>
+      <a href='delete.php?bid=".$rows['bookID']."' class='ce apn'>
+            Delete
+      </a>  
   </div>
+
   </div>
   </td>
   </tr>
+	
+
 	";
 	$no++;
 		array_push($hints, $hint);

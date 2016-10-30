@@ -3,7 +3,10 @@
   ?>
   <script>
   var lastSearch = "";
-  function showResult(str,page) {
+  var bookID = null;
+  var page = null;
+  function showResult(str,page,bookID) {
+    
     if (str.length==0) { 
       document.getElementById("livesearch").innerHTML="";
       document.getElementById("livesearch").style.border="0px";
@@ -26,15 +29,17 @@
     if(page==null){
       page=1;
     }
+    
+    if(bookID!=null){
+      // alert('asd');
+      xmlhttp.open("GET","studentlivesearch.php?q="+str+"&page="+page+"&bID="+bookID,true);
+    }else{
+      // alert('qwe');
     xmlhttp.open("GET","studentlivesearch.php?q="+str+"&page="+page,true);
+    }
     xmlhttp.send();
   }
-  $(document).ready(function(){
-  $("a").click(function(){
-      i=$(this).data("value");
-      showResult(lastSearch,i);
-    })
-  });
+
   $(document).ready(function(){
     $('#docsModal1').on('show.bs.modal', function (event) {
       var button = $(event.relatedTarget);; // Button that triggered the modal
@@ -54,21 +59,40 @@
       //   case "Normal": modal.find('.modal-body #normal').attr("selected","selected");break;
       //   case "Low": modal.find('.modal-body #low').attr("selected","selected");break;
       // }
-      // modal.find('.modal-body #date').attr("value",taskdate);
-      // modal.find('.modal-body #time').attr("value",time);
       // modal.find('.modal-body #tid').attr("value",tid);
       // modal.find('.modal-body #description').attr("value",description);
-      // modal.find('.modal-body .mbirthday').html(birthday);
+      
       // modal.find('.modal-body .mcompany').html(company);
     }); 
     
-    
+    $("a").click(function(){
+      // alert('ASD');
+      i=$(this).data("value");
+      // alert(i);
+      showResult(lastSearch,i,bookID);
+    });
+    $("#notify").on("click", ".btn", function () {
+    alert($(this).attr("id"));
+    alert($(this).attr("value"));
+});
     // $('#search').val('');
   });
-
+  function recordNotify(str){
+    // var str=$(this).attr("value");
+    
+      showResult(lastSearch,page,str);
+      // alert('s');
+    // alert($(this).attr("value"));
+  };
+  
 </script>
 <body onload="showResult('')">
-
+<?php
+if(isset($_SESSION['notify'])){
+  echo "<script>alert('Request notification success! We will notify you once the book is available! Please check your overview periodically!'";
+  $_SESSION['notify']=null;
+}
+?>
  <div class="hc aps">
         <div class="apa">
   <div class="apb">
@@ -134,12 +158,8 @@ echo "<li><a href='#' data-value='$total_pages'>".'Last'."</a></li></div> "; // 
         <h4 class="modal-title" id="myModalLabel"></h4>
       </div>
       <div class="modal-body">
-        <img src="" alt="NO IMAGE">
+        <img src="" alt="NO IMAGE" width="100%">
         <p id="introduction"></p>
-      </div>
-      <div class="rj">
-        <button type="submit" class="ce apo" data-dismiss="modal">Borrow</button>
-        <button type="button" class="ce apo" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
