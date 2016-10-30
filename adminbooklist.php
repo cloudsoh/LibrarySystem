@@ -69,7 +69,7 @@
   });
 
 </script>
-<body onload="showResult(' ')">
+<body onload="showResult('')">
  <div class="hc aps">
         <div class="apa">
   <div class="apb">
