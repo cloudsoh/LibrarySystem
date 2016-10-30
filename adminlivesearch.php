@@ -61,7 +61,7 @@ if(strlen($q)>=0)
   <div class='akh'>
     <div class='nz'>
       <button data-target='#docsModal3' class='ce apn' data-toggle='modal' data-bid='".$rows['bookID']."' data-name='".$rows['bookName']."' data-author='".$rows['author']."' data-publisher='".$rows['publisher']."' data-genre='".$rows['genre']."'>Edit</button>
-      <button class='ce apn' data-target='#docsModal1' data-toggle='modal'>Borrow</button>
+      <button class='ce apn' data-target='#docsModal1' data-toggle='modal' data-bid='".$rows['bookID']."' data-image='".$image."' data-lid='".$rows['lenderID']."'>Borrow</button>
       <a href='delete.php?bid=".$rows['bookID']."' class='ce apn'>
             Delete
       </a>  
