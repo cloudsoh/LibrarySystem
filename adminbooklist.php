@@ -244,7 +244,7 @@
           <div class="form-group">
             <label for="image" class="control-label col-md-2">Image: </label>
             <div class="col-md-10">
-              <input class="form-control" type="file" id="bookImage" name="bookImage" required>
+              <input class="form-control" type="file" id="bookImage" name="bookImage">
             </div>
           </div>
         </form><!-- could be upload image -->
@@ -266,7 +266,7 @@
         <h4 class="modal-title" id="myModalLabel">Edit Book detail</h4>
       </div>
       <div class="modal-body">
-        <form class="form-horizontal" method="POST" action="" id="edit-form" name="edit-form" enctype="multipart/form-data">
+        <form class="form-horizontal" method="POST" action="editbook.php" id="edit-form" name="edit-form" enctype="multipart/form-data">
           <div class="form-group">
             <label for="bookID" class="control-label col-md-2">Book code: </label>
             <div class="col-md-10">
@@ -300,7 +300,7 @@
           <div class="form-group">
             <label for="image" class="control-label col-md-2">Image: </label>
             <div class="col-md-10">
-              <input class="form-control" type="file" id="bookImage" name="bookImage">
+              <input class="form-control" type="file" id="bookImage" name="bookImage" required>
             </div>
           </div>
         </form>
