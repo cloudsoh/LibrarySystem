@@ -47,8 +47,8 @@
       var modal = $(this);
       modal.find('.modal-title').text(name);
       // modal.find('.modal-body input').val(recipient);
-      // modal.find('.modal-body #task').attr("value",name);
-    
+      modal.find('.modal-body img').attr("src",image);
+      modal.find('.modal-body #introduction').html(introduction);
       // switch(priority){
       //   case "High": modal.find('.modal-body #high').attr("selected","selected");break;
       //   case "Normal": modal.find('.modal-body #normal').attr("selected","selected");break;
@@ -82,7 +82,7 @@
   <div class="akh aki">
     <div class="tn aol">
       <input type="text" class="form-control aqr" placeholder="Search books" onkeyup="showResult(this.value)" autofocus>
-      <span class="bv adn"></span><!--search the book from the name/code/author/publisher/genre -->
+      <span class="bv"><span class="fa fa-search"></span></span><!--search the book from the name/code/author/publisher/genre -->
     </div>
   </div>
 </div>
@@ -134,7 +134,8 @@ echo "<li><a href='#' data-value='$total_pages'>".'Last'."</a></li></div> "; // 
         <h4 class="modal-title" id="myModalLabel"></h4>
       </div>
       <div class="modal-body">
-        
+        <img src="" alt="NO IMAGE">
+        <p id="introduction"></p>
       </div>
       <div class="rj">
         <button type="submit" class="ce apo" data-dismiss="modal">Borrow</button>

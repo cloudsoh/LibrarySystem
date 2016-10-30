@@ -20,7 +20,7 @@
   <div class="akh aki">
     <div class="tn aol">
       <input type="text" class="form-control aqr" placeholder="Search books">
-      <span class="bv adn"></span><!--search the book from the name/code/author/publisher/genre -->
+      <span class="bv"><span class="fa fa-search"></span></span><!--search the book from the name/code/author/publisher/genre -->
     </div>
   </div>
   <div class="akh">
