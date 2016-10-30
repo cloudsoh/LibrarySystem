@@ -28,7 +28,7 @@
                             </li>
                             <li><a href="#get-in-touch">contact</a>
                             </li>
-                            <li class="social-nav visible-lg">
+                            <li class="social-nav">
                                <a href="#" data-toggle="modal" data-target="#login-form-modal" >Sign in</a>
                                <a href="#" data-toggle="modal" data-target="#signup-form-modal">Sign Up</a>
                             </li>
