@@ -36,7 +36,7 @@
     })
   });
   $(document).ready(function(){
-    $('#task-form-modal2').on('show.bs.modal', function (event) {
+    $('#docsModal1').on('show.bs.modal', function (event) {
       var button = $(event.relatedTarget);; // Button that triggered the modal
       var name = button.data('name'); // Extract info from data-* attributes
       var image = button.data('image');
@@ -47,17 +47,17 @@
       var modal = $(this);
       modal.find('.modal-title').text(name);
       // modal.find('.modal-body input').val(recipient);
-      modal.find('.modal-body #task').attr("value",name);
-    
-      switch(priority){
-        case "High": modal.find('.modal-body #high').attr("selected","selected");break;
-        case "Normal": modal.find('.modal-body #normal').attr("selected","selected");break;
-        case "Low": modal.find('.modal-body #low').attr("selected","selected");break;
-      }
-      modal.find('.modal-body #date').attr("value",taskdate);
-      modal.find('.modal-body #time').attr("value",time);
-      modal.find('.modal-body #tid').attr("value",tid);
-      modal.find('.modal-body #description').attr("value",description);
+      modal.find('.modal-body img').attr("src",image);
+      modal.find('.modal-body #introduction').html(introduction);
+      // switch(priority){
+      //   case "High": modal.find('.modal-body #high').attr("selected","selected");break;
+      //   case "Normal": modal.find('.modal-body #normal').attr("selected","selected");break;
+      //   case "Low": modal.find('.modal-body #low').attr("selected","selected");break;
+      // }
+      // modal.find('.modal-body #date').attr("value",taskdate);
+      // modal.find('.modal-body #time').attr("value",time);
+      // modal.find('.modal-body #tid').attr("value",tid);
+      // modal.find('.modal-body #description').attr("value",description);
       // modal.find('.modal-body .mbirthday').html(birthday);
       // modal.find('.modal-body .mcompany').html(company);
     }); 
@@ -134,7 +134,8 @@ echo "<li><a href='#' data-value='$total_pages'>".'Last'."</a></li></div> "; // 
         <h4 class="modal-title" id="myModalLabel"></h4>
       </div>
       <div class="modal-body">
-        
+        <img src="" alt="NO IMAGE">
+        <p id="introduction"></p>
       </div>
       <div class="rj">
         <button type="submit" class="ce apo" data-dismiss="modal">Borrow</button>
