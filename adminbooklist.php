@@ -75,9 +75,9 @@
       var modal = $(this);
       promptout(lenderID);
       if(lenderID==''){
-        modal.find('.rj #borrow').addClass('disabled');
-      }else{
         modal.find('rj #borrow').removeClass('disabled');
+      }else{
+        modal.find('.rj #borrow').addClass('disabled');
       }
       modal.find('.modal-body img').attr("src",image);
       modal.find('.modal-body #bookID').attr("value",bid);
