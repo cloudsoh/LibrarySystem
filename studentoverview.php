@@ -100,7 +100,7 @@
         <?php
           require_once('config.php');
           $studid=$_SESSION['userid'];
-          $sql="SELECT * FROM books WHERE lenderID = $studid";
+          $sql="SELECT * FROM books WHERE bName = $studid";
           $result=$conn->query($sql);
           $no=1;
           if($result->num_rows>0){
