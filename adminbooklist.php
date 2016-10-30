@@ -189,6 +189,12 @@
             </div>
           </div>
           <div class="form-group">
+            <label for="intro" class="control-label col-md-2">Introduction: </label>
+            <div class="col-md-10">
+              <textarea class="form-control" id="intro" name="intro" placeholder="Introduction" value="" required></textarea>
+            </div>
+          </div>
+          <div class="form-group">
             <label for="author" class="control-label col-md-2">Author: </label>
             <div class="col-md-10">
               <input class="form-control" type="text" id="author" name="author" placeholder="Author" value="" required>
@@ -204,6 +210,35 @@
             <label for="genre" class="control-label col-md-2">Genre: </label>
             <div class="col-md-10">
               <input class="form-control" type="text" name="genre" id="genre" placeholder="genre" value="" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="pDate" class="control-label col-md-2">Publish Date:</label>
+            <div class="col-md-10">
+              <input class="form-control" type="date" id="pDate" name="pDate" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="language" class="control-label col-md-2">Language:</label>
+            <div class="col-md-10">
+              <select class="form-control" name="language" id="language" required>
+                <option value="1">English</option>
+                  <option value="2">Mandarin</option>
+                  <option value="3">Bahasa Melayu</option>
+                  <option value="4">Hindi</option>
+                  <option value="5">Japanese</option>
+                  <option value="6">Filipino</option>
+                  <option value="7">Cantonese</option>
+                  <option value="8">Russian</option>
+                  <option value="9">Korean</option>
+                  <option value="10">Vietnamese</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="price" class="control-label col-md-2">Price: </label>
+            <div class="col-md-10">
+              <input class="form-control" type="text" id="price" name="price" required>
             </div>
           </div>
           <div class="form-group">
