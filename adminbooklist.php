@@ -37,7 +37,7 @@
   });
   $(document).ready(function(){
     $('#docsModal3').on('show.bs.modal', function (event) {
-      var button = $(event.relatedTarget);; // Button that triggered the modal
+      var button = $(event.relatedTarget); // Button that triggered the modal
       var bid = button.data('bid'); // Extract info from data-* attributes
       var name = button.data('name');
       var author = button.data('author');
@@ -63,11 +63,25 @@
       // modal.find('.modal-body .mbirthday').html(birthday);
       // modal.find('.modal-body .mcompany').html(company);
     }); 
-    
-    
+
     // $('#search').val('');
   });
-
+  $(document).ready(function(){
+    $('#docsModal1').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget);
+      var bid = button.data('bid');
+      var image = button.data('image');
+      var lenderID = button.data('lid');
+      var modal = $(this);
+      if(lenderID!=null){
+        modal.find('.rj #borrow').addClass("disabled");
+      }
+      modal.find('.modal-body img').attr("src",image);
+      modal.find('.modal-body #bookID').attr("value",bid);
+      modal.find('.modal-body #lenderID').attr("value",lenderID);
+      modal.find('.rj #return').attr("href","return.php?bid="+bid);
+    });
+  });
 </script>
 <body onload="showResult('')">
  <div class="hc aps">
@@ -131,41 +145,24 @@
       </div>
       <div class="modal-body">
         <form class="form-horizontal" method="POST" action="" id="borrow-form" name="borrow-form">
+          <img src="" alt="NO IMAGE" width="100%">
           <div class="form-group">
-            <label for="xxx" class="control-label col-md-2">Book code: </label>
+            <label for="bookID" class="control-label col-md-2">Book code: </label>
             <div class="col-md-10">
-              
+              <input class="form-control" type="text" id="bookID" name="bookID" value="" readonly>
             </div>
           </div>
           <div class="form-group">
-            <label for="xxx" class="control-label col-md-2">Book Name: </label>
+            <label for="lenderID" class="control-label col-md-2">LenderID: </label>
             <div class="col-md-10">
-             
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="xxx" class="control-label col-md-2">Author: </label>
-            <div class="col-md-10">
-              
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="xxx" class="control-label col-md-2">Publisher: </label>
-            <div class="col-md-10">
-              
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="xxx" class="control-label col-md-2">Genre: </label>
-            <div class="col-md-10">
-           
+              <input class="form-control" type="text" id="lenderID" name="lenderID" value="">
             </div>
           </div>
         </form>
       </div>
       <div class="rj">
         <button type="submit" id="borrow" class="ce apo" form="borrowborrow-form">Borrow</button>
-        <a href="return.php?bid=" class="ce apo">Return</a>
+        <a href="" id="return" class="ce apo">Return</a>
         <button type="button" class="ce apo" data-dismiss="modal">Close</button>
       </div>
     </div>
