@@ -5,6 +5,7 @@
   var lastSearch = "";
   var bookID = null;
   var page = null;
+
   function showResult(str,page,bookID) {
     
     if (str.length==0) { 
@@ -32,6 +33,7 @@
     if(bookID!=null){
       // alert('asd');
       xmlhttp.open("GET","studentlivesearch.php?q="+str+"&page="+page+"&bID="+bookID,true);
+      alert('Request notification success! We will notify you once the book is available! Please check your overview periodically!');
     }else{
       // alert('qwe');
     xmlhttp.open("GET","studentlivesearch.php?q="+str+"&page="+page,true);
@@ -87,19 +89,19 @@
 </script>
 <body onload="showResult('')">
 <?php
-if(isset($_SESSION['notify'])){
-  echo "<script>alert('Request notification success! We will notify you once the book is available! Please check your overview periodically!')</script>";
-  $_SESSION['notify']=null;
-}
+// if(isset($_SESSION['notify'])){
+//   echo "<script>alert('Request notification success! We will notify you once the book is available! Please check your overview periodically!')</script>";
+//   $_SESSION['notify']=null;
+// }
 ?>
  <div class="hc aps">
         <div class="apa">
-  <div class="apb">
-    <h6 class="apd">Student</h6>
-    <h2 class="apc">Booklist</h2>
-  </div>
+          <div class="apb">
+            <h6 class="apd">Student</h6>
+            <h2 class="apc">Booklist</h2>
+          </div>
 
-</div>
+        </div>
 
 <div class="akg ue">
   <div class="akh aki">
