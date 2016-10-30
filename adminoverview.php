@@ -19,19 +19,7 @@
           <td>Content</td>
           <td>Time</td>
           <td></td>
-<<<<<<< HEAD
-          </tr>";
-        while ($row = $result->fetch_assoc()) {
-          echo "
-          <tr>
-          <td>".$row['content']."</td>
-          <td>".$row['date']."</td>
-          <td>
-          <a class=\"ce apn\"href='removeMessage.php?id=".$row['id']."'>Remove</a>
-          </td>
-          </tr>";
-      }
-=======
+
         </tr>
       </thead>
       <tbody>
@@ -51,7 +39,7 @@
       </tbody>
     </table>
 <?php
->>>>>>> origin/master
+
     }else{
       echo "<p>Dear all reader,
 For any latest news or notices, please refer to our library website : 
