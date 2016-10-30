@@ -71,16 +71,17 @@
       var button = $(event.relatedTarget);
       var bid = button.data('bid');
       var image = button.data('image');
-      var lenderID = button.data('lid');
+      var bName = button.data('bname');
       var modal = $(this);
-      if(lenderID==''){
-        modal.find('.rj #borrow').removeClass('disabled');
+      if(bName==''){
+        modal.find('.rj #borrow').removeAttr('disabled');
       }else{
-        modal.find('.rj #borrow').addClass('disabled');
+        modal.find('.rj #borrow').attr('disabled','disabled');
       }
       modal.find('.modal-body img').attr("src",image);
       modal.find('.modal-body #bookID').attr("value",bid);
-      modal.find('.modal-body #lenderID').attr("value",lenderID);
+      console.log(bName);
+      modal.find('.modal-body #bName').attr("value",bName);
       modal.find('.rj #return').attr("href","return.php?bid="+bid);
     });
   });
@@ -155,9 +156,9 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="lenderID" class="control-label col-md-2">LenderID: </label>
+            <label for="bName" class="control-label col-md-2">Borrower Name: </label>
             <div class="col-md-10">
-              <input class="form-control" type="text" id="lenderID" name="lenderID" value="">
+              <input class="form-control" type="text" id="bName" name="bName">
             </div>
           </div>
         </form>

@@ -56,13 +56,13 @@ if(strlen($q)>=0)
           <td>".$rows['bookName']."</td>
           <td>".$rows['author']."</td>
           <td>".$rows['publisher']."</td>
-          <td>".$rows['lenderID']."</td><!-- available/borrowed -->
-          <td>".$rows['lenderDate']."</td>
+          <td>".$rows['bName']."</td><!-- available/borrowed -->
+          <td>".$rows['bDate']."</td>
           <td>
   <div class='akh'>
     <div class='nz'>
       <button data-target='#docsModal3' class='ce apn' data-toggle='modal' data-bid='".$rows['bookID']."' data-name='".$rows['bookName']."' data-author='".$rows['author']."' data-publisher='".$rows['publisher']."' data-genre='".$rows['genre']."'>Edit</button>
-      <button class='ce apn' data-target='#docsModal1' data-toggle='modal' data-bid='".$rows['bookID']."' data-image='".$image."' data-lid='".$rows['lenderID']."'>Borrow</button>
+      <button class='ce apn' data-target='#docsModal1' data-toggle='modal' data-bid='".$rows['bookID']."' data-image='".$image."' data-bName='".$rows['bName']."'>Borrow</button>
       <a href='delete.php?bid=".$rows['bookID']."' class='ce apn'>
             Delete
       </a>  

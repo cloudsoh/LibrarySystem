@@ -51,7 +51,7 @@ if(strlen($q)>=0)
 	while($rows = $result->fetch_assoc())
 	{
 		
-		if(isset($rows['lenderID'])){
+		if(isset($rows['bName'])){
       $checksql = "SELECT * FROM notification WHERE id='".$_SESSION['userid']."' AND bookID='".$rows['bookID']."'";
       $checkresult = $conn->query($checksql);
       if ($checkresult->num_rows > 0) {
@@ -67,11 +67,13 @@ if(strlen($q)>=0)
 		}else{
 			$temp="<button class='btn btn-success' disabled>AVAILABLE</button>";
 		}
-
-    $image=$rows['image'];
-    if(!isset($rows['image'])){
-        $image="img/books/noimg.png";
-    }
+    $image="img/books/";
+    $image.=$rows['bookID'];
+    $image.=".jpg";
+    // $image=$rows['image'];
+    // if(!isset($rows['image'])){
+    //     $image="img/books/noimg.png";
+    // }
 		//$id = $rows['id'];
 	$hint = " <tr>
           <td>".$no."</td>
