@@ -19,6 +19,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
 	<link href="css/toolkit-light.css" rel="stylesheet">
 	<link href="css/application.css" rel="stylesheet">
+	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<style>
 	body{
 		width:1px;
