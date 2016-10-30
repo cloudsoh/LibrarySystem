@@ -16,6 +16,7 @@
 
 	<title>Southern Library System</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
+	<link rel="stylesheet" href="css/bootstrap.css">
 	<link href="css/toolkit-inverse.css" rel="stylesheet">
 	<link rel="shortcut icon" href="img/library.png">
 	<link href="css/application.css" rel="stylesheet">

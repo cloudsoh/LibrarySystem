@@ -13,16 +13,13 @@
   <h3 class="anw anx">Library News/Notices</h3>
 </div>
 <div class="fu db aln">
-<?php
-    $sql="SELECT * FROM feedback";
-      $result = $conn->query($sql); //run the query
-      $total_records = $result->num_rows;
-      if($total_records>0){
-        echo "o0o<table>
-          <tr>
+    <table class='table'>
+      <thead>
+        <tr>
           <td>Content</td>
           <td>Time</td>
           <td></td>
+<<<<<<< HEAD
           </tr>";
         while ($row = $result->fetch_assoc()) {
           echo "
@@ -34,6 +31,27 @@
           </td>
           </tr>";
       }
+=======
+        </tr>
+      </thead>
+      <tbody>
+  <?php 
+  $sql="SELECT * FROM feedback";
+      $result = $conn->query($sql); //run the query
+      $total_records = $result->num_rows;
+      if($total_records>0){
+    while ($row = $result->fetch_assoc()) {
+  ?>      
+    <tr>
+      <td><?php echo $row['content'] ?></td>
+      <td><?php echo $row['date'] ?></td>
+      <td><a href='removeMessage.php?id=<?php $row['id'] ?>'>Remove</a></td>
+    </tr>
+   <?php  } ?>
+      </tbody>
+    </table>
+<?php
+>>>>>>> origin/master
     }else{
       echo "<p>Dear all reader,
 For any latest news or notices, please refer to our library website : 
