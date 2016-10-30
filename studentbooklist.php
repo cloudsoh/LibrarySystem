@@ -2,39 +2,70 @@
     include('studentheader.php');
   ?>
   <script>
-var lastSearch = "";
-function showResult(str,page) {
-  if (str.length==0) { 
-    document.getElementById("livesearch").innerHTML="";
-    document.getElementById("livesearch").style.border="0px";
-    // return;
-  }
-  if (window.XMLHttpRequest) {
-    // code for IE7+, Firefox, Chrome, Opera, Safari
-    xmlhttp=new XMLHttpRequest();
-  } else {  // code for IE6, IE5
-    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-  }
-  xmlhttp.onreadystatechange=function() {
-    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-      document.getElementById("livesearch").innerHTML=xmlhttp.responseText;
-      // document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+  var lastSearch = "";
+  function showResult(str,page) {
+    if (str.length==0) { 
+      document.getElementById("livesearch").innerHTML="";
+      document.getElementById("livesearch").style.border="0px";
+      // return;
     }
+    if (window.XMLHttpRequest) {
+      // code for IE7+, Firefox, Chrome, Opera, Safari
+      xmlhttp=new XMLHttpRequest();
+    } else {  // code for IE6, IE5
+      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function() {
+      if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+        document.getElementById("livesearch").innerHTML=xmlhttp.responseText;
+        // document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+      }
+    }
+    var i = 1;
+    lastSearch = str;
+    if(page==null){
+      page=1;
+    }
+    xmlhttp.open("GET","studentlivesearch.php?q="+str+"&page="+page,true);
+    xmlhttp.send();
   }
-  var i = 1;
-  lastSearch = str;
-  if(page==null){
-    page=1;
-  }
-  xmlhttp.open("GET","livesearch.php?q="+str+"&page="+page,true);
-  xmlhttp.send();
-}
-$(document).ready(function(){
-$("a").click(function(){
-    i=$(this).data("value");
-    showResult(lastSearch,i);
-  })
-})
+  $(document).ready(function(){
+  $("a").click(function(){
+      i=$(this).data("value");
+      showResult(lastSearch,i);
+    })
+  });
+  $(document).ready(function(){
+    $('#task-form-modal2').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget);; // Button that triggered the modal
+      var name = button.data('name'); // Extract info from data-* attributes
+      var image = button.data('image');
+      var introduction = button.data('introduction');
+
+      // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+      // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+      var modal = $(this);
+      modal.find('.modal-title').text(name);
+      // modal.find('.modal-body input').val(recipient);
+      modal.find('.modal-body #task').attr("value",name);
+    
+      switch(priority){
+        case "High": modal.find('.modal-body #high').attr("selected","selected");break;
+        case "Normal": modal.find('.modal-body #normal').attr("selected","selected");break;
+        case "Low": modal.find('.modal-body #low').attr("selected","selected");break;
+      }
+      modal.find('.modal-body #date').attr("value",taskdate);
+      modal.find('.modal-body #time').attr("value",time);
+      modal.find('.modal-body #tid').attr("value",tid);
+      modal.find('.modal-body #description').attr("value",description);
+      // modal.find('.modal-body .mbirthday').html(birthday);
+      // modal.find('.modal-body .mcompany').html(company);
+    }); 
+    
+    
+    // $('#search').val('');
+  });
+
 </script>
 <body onload="showResult('')">
 
@@ -45,12 +76,6 @@ $("a").click(function(){
     <h2 class="apc">Booklist</h2>
   </div>
 
-  <div class="ob ape">
-    <div class="tn aol">
-      <input type="text" value="01/01/15 - 01/08/15" class="form-control" data-provide="datepicker">
-      <span class="bv wt"></span><!--search the book from the insert date-->
-    </div>
-  </div>
 </div>
 
 <div class="akg ue">
@@ -99,57 +124,23 @@ echo "<li><a href='#' data-value='$total_pages'>".'Last'."</a></li></div> "; // 
   </ul>
 </div>
 
-      </div>
-    </div>
-  </div>
+    
     <div id="docsModal1" class="cb fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog">
     <div class="modal-content">
 
       <div class="ri">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Book Detail</h4>
+        <h4 class="modal-title" id="myModalLabel"></h4>
       </div>
       <div class="modal-body">
-        <form class="form-horizontal" method="POST" action="" id="task-form" name="task-form">
-          <div class="form-group">
-            <label for="xxx" class="control-label col-md-2">Book code: </label>
-            <div class="col-md-10">
-              <!-- Php echo that book details -->
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="xxx" class="control-label col-md-2">Book Name: </label>
-            <div class="col-md-10">
-             
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="xxx" class="control-label col-md-2">Author: </label>
-            <div class="col-md-10">
-              
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="xxx" class="control-label col-md-2">Publisher: </label>
-            <div class="col-md-10">
-              
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="xxx" class="control-label col-md-2">Genre: </label>
-            <div class="col-md-10">
-           
-            </div>
-          </div>
-        </form>
+        
       </div>
       <div class="rj">
-        <button type="submit" class="ce apo" data-dismiss="modal">
-                  Borrow
-        </a>
+        <button type="submit" class="ce apo" data-dismiss="modal">Borrow</button>
         <button type="button" class="ce apo" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
+</body>
