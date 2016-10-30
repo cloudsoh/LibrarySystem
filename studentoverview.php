@@ -1,84 +1,84 @@
  <?php 
     include('studentheader.php');
   ?>
-      <div class="hc aps">
-        <div class="apa">
-  <div class="apb">
-    <h6 class="apd">Overview</h6>
-    <h2 class="apc">Welcome <?php echo $_SESSION['username'];?></h2>
-  </div>
-</div>
-
-<div class="anv alg ala">
-  <h3 class="anw anx">Library News/Notices</h3>
-</div>
-<div class="fu db aln">
-      
-<p>Dear all reader,
-For any latest news or notices, please refer to our library website : 
-<a href="http://lib.sc.edu.my/">http://lib.sc.edu.my/</a>
-,Thanks.
-<br>
-The Library
-</p>
-</div>
-
-<div class="anv alg ala">
-  <h3 class="anw anx">All stats</h3>
-</div>
-<!--Using php to display the stats of total-->
-<div class="fu apt">
-  <div class="gq gg ala">
-    <div class="apu ano">
-      <div class="alz">
-        <span class="anj">Books</span>
-        <h2 class="ani">
-          12,938
-          <small class="ank anl">5%</small>
-        </h2>
-        <hr class="ans akt">
-      </div>
-     </div>
-  </div>
-  <div class="gq gg ala">
-    <div class="apu anr">
-      <div class="alz">
-        <span class="anj">E-Books</span>
-        <h2 class="ani">
-          758
-          <small class="ank anm">1.3%</small>
-        </h2>
-        <hr class="ans akt">
-      </div>
-     </div>
-  </div>
-  <div class="gq gg ala">
-    <div class="apu anp">
-      <div class="alz">
-        <span class="anj">Newspaper</span>
-        <h2 class="ani">
-          1,293
-          <small class="ank anl">6.75%</small>
-        </h2>
-        <hr class="ans akt">
-      </div>
+<div class="hc aps">
+  <div class="apa">
+    <div class="apb">
+      <h6 class="apd">Overview</h6>
+      <h2 class="apc">Welcome <?php echo $_SESSION['username'];?></h2>
     </div>
   </div>
-  <div class="gq gg ala">
-    <div class="apu anq">
-      <div class="alz">
-        <span class="anj">New Arrivals</span>
-        <h2 class="ani">
-          758
-          <small class="ank anm">1.3%</small>
-        </h2>
-        <hr class="ans akt">
-      </div>
-     </div>
-  </div>
-</div>
 
-<hr class="aky">
+  <div class="anv alg ala">
+    <h3 class="anw anx">Library News/Notices</h3>
+  </div>
+  <div class="fu db aln">
+      
+    <p>Dear all reader,
+    For any latest news or notices, please refer to our library website : 
+    <a href="http://lib.sc.edu.my/">http://lib.sc.edu.my/</a>
+    ,Thanks.
+    <br>
+    The Library
+    </p>
+  </div>
+
+  <div class="anv alg ala">
+    <h3 class="anw anx">All stats</h3>
+  </div>
+<!--Using php to display the stats of total-->
+  <div class="fu apt">
+    <div class="gq gg ala">
+      <div class="apu ano">
+        <div class="alz">
+          <span class="anj">Books</span>
+          <h2 class="ani">
+            12,938
+            <small class="ank anl">5%</small>
+          </h2>
+          <hr class="ans akt">
+        </div>
+       </div>
+    </div>
+    <div class="gq gg ala">
+      <div class="apu anr">
+        <div class="alz">
+          <span class="anj">E-Books</span>
+          <h2 class="ani">
+            758
+            <small class="ank anm">1.3%</small>
+          </h2>
+          <hr class="ans akt">
+        </div>
+       </div>
+    </div>
+    <div class="gq gg ala">
+      <div class="apu anp">
+        <div class="alz">
+          <span class="anj">Newspaper</span>
+          <h2 class="ani">
+            1,293
+            <small class="ank anl">6.75%</small>
+          </h2>
+          <hr class="ans akt">
+        </div>
+      </div>
+    </div>
+    <div class="gq gg ala">
+      <div class="apu anq">
+        <div class="alz">
+          <span class="anj">New Arrivals</span>
+          <h2 class="ani">
+            758
+            <small class="ank anm">1.3%</small>
+          </h2>
+          <hr class="ans akt">
+        </div>
+       </div>
+    </div>
+  </div>
+
+  <hr class="aky">
 <div class="ud">
   <div class="eg">
     <table class="cl" data-sort="table">
@@ -148,7 +148,8 @@ The Library
                   $fines=($interval->invert ? "RM$calcfines.00" : "--");
                   $timeleftformat=($interval->invert ? "$timeleftformat expired" : "$timeleftformat left");
                   echo $interval->format($timeleftformat);
-              ?></td>
+              ?>
+          </td>
           <td>
             <div class="akh">
               <div class="nz">
@@ -156,15 +157,13 @@ The Library
                             Return
                   </a><!--Edit the book-->
               </div>
-
             </div>
   <?php $no++;}}else{}?>
-    </div></td>
-        </tr>
-      </tbody>
-    </table>
+    </td></tr></tbody></table>
+    </div>
+       
   </div>
-    </div><!--close content -->
-  </div>
+</div><!--close content -->
+  
 
   
