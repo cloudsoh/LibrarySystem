@@ -13,7 +13,6 @@ $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // echo $imageFileType;
 // Allow certain file formats
-
 // Check if image file is a actual image or fake image
 $tmp_name = $_FILES['bookImage']['tmp_name'];    
 // echo $tmp_name;
@@ -22,6 +21,7 @@ if($tmp_name==null){
 }else{
 	$check = getimagesize($tmp_name);
 }
+if($_FILES['bookImage']['name']!=""){
     if($check !== false) {
     	if($imageFileType != "jpg") {
 		    // echo "Sorry, only JPG is allowed.";
@@ -36,6 +36,9 @@ if($tmp_name==null){
          echo "<script>alert('File is not an image.');</script>";
         $uploadOk = 0;
     }
+}else{
+	$uploadOk=1;
+}
 
 
 $imagetype= $_FILES["bookImage"]["type"];
@@ -51,9 +54,11 @@ if($uploadOk==1){
 		    if (move_uploaded_file($tmp_name, "img/books/".$bookID.".".$imageFileType)) {
 		        // echo "The file ". basename( $_FILES["bookImage"]["name"]). " has been uploaded.";
 		        echo "<script>alert('Book Detail has Succesfully Edit!');window.location.href='adminbooklist.php';</script>";
+		        // window.location.href='adminbooklist.php';
 				move_uploaded_file($tmp_name, $target_file);
 		    } else {
-		        echo "<script>alert('Sorry, there was an error uploading your file.');window.location.href='adminbooklist.php';</script>";
+		        echo "<script>alert('Book Detail has Succesfully Edit!');window.location.href='adminbooklist.php';</script>";
+		        // 
 		    }
 		}
 		
@@ -65,6 +70,7 @@ if($uploadOk==1){
 	}
 }else{
 	echo "<script>alert('Sorry your file was not uploaded.');window.location.href='adminbooklist.php';</script>";
+	// window.location.href='adminbooklist.php';
 }
 $conn->close();
 ?>
