@@ -93,14 +93,17 @@
           <th>Book code</th>
           <th>Book Name</th>
           <th>Times</th>
-          <th>Function</th>
+          <!-- <th>Function</th> -->
         </tr>
       </thead>
       <tbody>
         <?php
           require_once('config.php');
-          $studid=$_SESSION['userid'];
-          $sql="SELECT * FROM books WHERE bName = $studid";
+          date_default_timezone_set("Asia/Singapore");//set timezone
+          $studid=$_SESSION['username'];
+          // echo $studid;
+          $sql="SELECT * FROM books WHERE bName = '$studid'";
+          // echo $sql;
           $result=$conn->query($sql);
           $no=1;
           if($result->num_rows>0){
@@ -111,9 +114,9 @@
           <td><?php echo $rows['bookID'];?></td>
           <td><?php echo $rows['bookName'];?></td>
           <td><?php 
-                $sessiontime=strtotime($_SESSION['dlenderDate']);
+                $sessiontime=strtotime($rows['bDate']);
                 if($sessiontime==null){
-                  $sessiontime=$_SESSION['dlenderDate'];
+                  $sessiontime=$rows['bDate'];
                   $DTcurrenttime=DateTime::createFromFormat('Y-m-d H:i:sa', $sessiontime);
                 }else{
                   $sessiontime=date("Y-m-d H:i:sa",$sessiontime);
@@ -155,16 +158,11 @@
                   echo $interval->format($timeleftformat);
               ?>
           </td>
-          <td>
-            <div class="akh">
-              <div class="nz">
-                <a href="#" class="ce apn">
-                            Return
-                  </a><!--Edit the book-->
-              </div>
-            </div>
+          
+    </tr>
   <?php $no++;}}else{}?>
-    </td></tr></tbody></table>
+    </tbody>
+    </table>
     </div>
        
   </div>
