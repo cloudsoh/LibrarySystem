@@ -50,6 +50,11 @@ if(strlen($q)>=0)
 		}else{
 			$temp="AVAILABLE";
 		}
+
+    $image=$rows['image'];
+    if(!isset($rows['image'])){
+        $image="img/books/noimg.png";
+    }
 		//$id = $rows['id'];
 	$hint = " <tr>
           <td>".$no."</td>
@@ -63,7 +68,7 @@ if(strlen($q)>=0)
           <td>
   <div class='akh'>
     <div class='nz'>
-      <a href='#docsModal1' class='ce apn' data-toggle='modal' data-name='".$rows['bookName']."' data-image='".$rows['image']."' data-introduction='".$rows['introduction']."' >View</a>
+      <button data-target='#docsModal1' class='ce apn' data-toggle='modal' data-name='".$rows['bookName']."' data-image='".$image."' data-introduction='".$rows['introduction']."' >View</button>
   </div>
 
   </div>
