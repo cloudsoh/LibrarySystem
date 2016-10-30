@@ -13,8 +13,7 @@ if($result->num_rows > 0)
 {
 	$row=$result->fetch_assoc();
 	$_SESSION['username'] = $username;
-	echo $row['type'];
-	echo gettype($row['type']);
+	$_SESSION['type']=$row['type'];	
 	if($row['type']==1){
 		header('location:studentoverview.php');
 	}elseif($row['type']==2){
