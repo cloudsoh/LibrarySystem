@@ -14,12 +14,27 @@
   </div>
   <div class="fu db aln">
       
-    <p>Dear all reader,
-    For any latest news or notices, please refer to our library website : 
-    <a href="http://lib.sc.edu.my/">http://lib.sc.edu.my/</a>
+    <p><?php
+    $sql="SELECT * FROM notification LEFT JOIN books ON notification.bookID = books.bookID WHERE notification.id='".$_SESSION['userid']."' AND notification.status='1'";
+      $result = $conn->query($sql); //run the query
+      $total_records = $result->num_rows;
+      if($total_records>0){
+        while ($row = $result->fetch_assoc()) {
+          echo $row['bookName']." ( Book ID:".$row['bookID']." ) is now available for borrow! &nbsp;&nbsp;<a href='removeNotification.php?bid=".$row['bookID']."'>Remove</a><br>";
+      }
+    }else{
+      echo "Dear all reader,
+For any latest news or notices, please refer to our library website : 
+<a href=\"http://lib.sc.edu.my/\">http://lib.sc.edu.my/</a>
+,Thanks.
+<br>
+The Library";
+    }
+    ?>
+    <!-- <a href="http://lib.sc.edu.my/">http://lib.sc.edu.my/</a>
     ,Thanks.
     <br>
-    The Library
+    The Library -->
     </p>
   </div>
 
@@ -35,8 +50,8 @@
           <h2 class="ani">
             <?php
               $sql="SELECT * FROM notification WHERE id='".$_SESSION['userid']."'";
-              $result = $conn->query($sql); //run the query
-              $total_records = $result->num_rows;
+      $result = $conn->query($sql); //run the query
+      $total_records = $result->num_rows;
               echo $total_records;
             ?>
             <!-- <small class="ank anl">5%</small> -->

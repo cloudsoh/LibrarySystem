@@ -244,7 +244,7 @@
           <div class="form-group">
             <label for="image" class="control-label col-md-2">Image: </label>
             <div class="col-md-10">
-              <input class="form-control" type="file" id="bookImage" name="bookImage">
+              <input class="form-control" type="file" id="bookImage" name="bookImage" required>
             </div>
           </div>
         </form><!-- could be upload image -->

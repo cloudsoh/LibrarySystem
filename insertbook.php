@@ -38,7 +38,7 @@ if($tmp_name==null){
 	    }
 
     } else {
-         echo "<script>alert('File is not an image.');</script>";
+         echo "<script>alert('File is not an image.');window.location.href='adminbooklist.php';</script>";
         $uploadOk = 0;
     }
 
@@ -47,11 +47,12 @@ $imagetype= $_FILES["bookImage"]["type"];
 
 $sql="INSERT INTO books (bookName,introduction,author,publisher,genre,publishdate,language,price) VALUES ('$bookName','$intro','$author','$publisher','$genre','$pDate','$language','$price')" ;
 // echo $sql;
+if($uploadOk==1){
 if($conn->query($sql)===TRUE){
 	$last_id = $conn->insert_id;
 	// echo $last_id;
 	if ($uploadOk == 0) {
-	    echo "<script>alert('Sorry your file was not uploaded.');</script>";
+	    echo "<script>alert('Sorry your file was not uploaded.');window.location.href='adminbooklist.php';</script>";
 	// if everything is ok, try to upload file
 	} else {
 	    if (move_uploaded_file($tmp_name, "img/books/".$last_id.".".$imageFileType)) {
@@ -59,7 +60,7 @@ if($conn->query($sql)===TRUE){
 	        echo "<script>alert('New Book Has Succesfully Insert!');window.location.href='adminbooklist.php';</script>";
 			move_uploaded_file($tmp_name, $target_file);
 	    } else {
-	        echo "<script>alert('Sorry, there was an error uploading your file.');</script>";
+	        echo "<script>alert('Sorry, there was an error uploading your file.');window.location.href='adminbooklist.php';</script>";
 	    }
 	}
 	
@@ -69,6 +70,8 @@ if($conn->query($sql)===TRUE){
 }else{
 	echo "Error: ".$sql. "<br>" .$conn->error;
 }
-
+}else{
+	echo "<script>alert('Sorry your file was not uploaded.');window.location.href='adminbooklist.php';</script>";
+}
 
  ?>
