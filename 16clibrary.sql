@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 30, 2016 at 07:29 PM
+-- Generation Time: Oct 30, 2016 at 08:49 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -46,7 +46,7 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`bookID`, `bookName`, `introduction`, `author`, `publisher`, `genre`, `publishdate`, `language`, `price`, `bName`, `bDate`, `trend`) VALUES
-(150003, 'Southern University College', 'Southern University College is the first non-profit higher education institute and private university college in Skudai, Johor Bahru District, Johor, Malaysia. It was previously known as Southern College, established in 1990.', 'Lu Chow Ling', 'Johor Bahru', 'University Fiction', '2015-05-01', 'Korean', 0.99, 'asd', '2016-10-31 02:26:46', 1),
+(150003, 'Southern University College', 'Southern University College is the first non-profit higher education institute and private university college in Skudai, Johor Bahru District, Johor, Malaysia. It was previously known as Southern College, established in 1990.', 'Lu Chow Ling', 'Johor Bahru', 'University Fiction', '2015-05-01', 'Korean', 0.99, NULL, NULL, 1),
 (150004, 'Play wells with Windows Ten', 'Windows 10 is a personal computer operating system developed and released by Microsoft as part of the Windows NT family of operating systems. It was officially unveiled in September 2014 following a brief demo at Build 2014. The first version of the operating system entered a public beta testing process in October 2014, leading up to its consumer release on July 29, 2015', 'Jenkin', 'ASUS', 'Computer Science', '2015-06-07', 'English', 3699.98, NULL, NULL, 5),
 (150010, 'Love Life', 'Lovelife is a 1997 romantic comedy film written and directed by Jon Harmon Feldman. The ensemble cast includes Matt Letscher, Sherilyn Fenn, Saffron Burrows, Carla Gugino, Bruce Davison, Jon Tenney and Peter Krause.\r\n\r\nLovelife was nominated for a Feature Film Award at the 1997 Austin Film Festival, and won an Audience Award at the Los Angeles Independent Film Festival. The film was winner of the screenplay award at the L.A. Indie fest.', 'John Cena', 'WWE.Sdn.Bhd', 'Sports', '2004-08-03', 'English', 999.99, NULL, NULL, 4),
 (150011, 'Pokemon', 'The franchise began as a pair of video games for the original Game Boy, developed by Game Freak and published by Nintendo. The franchise now spans video games, trading card games, animated television shows and movies, comic books, and toys. Pokémon is the second-most successful and lucrative video game-based media franchise in the world, behind only Nintendo''s Mario franchise.', 'BANDAI', '3DS', 'Game', '2005-03-14', 'Japanese', 29.99, NULL, NULL, 0),
@@ -102,18 +102,20 @@ INSERT INTO `login` (`id`, `username`, `password`, `type`) VALUES
 CREATE TABLE `notification` (
   `no` int(11) NOT NULL,
   `id` int(65) NOT NULL,
-  `bookID` int(65) NOT NULL
+  `bookID` int(65) NOT NULL,
+  `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `notification`
 --
 
-INSERT INTO `notification` (`no`, `id`, `bookID`) VALUES
-(1, 2, 150001),
-(2, 2, 150021),
-(3, 2, 150025),
-(4, 2, 150003);
+INSERT INTO `notification` (`no`, `id`, `bookID`, `status`) VALUES
+(1, 2, 150001, 0),
+(2, 2, 150021, 0),
+(3, 2, 150025, 0),
+(5, 1, 150003, 1),
+(6, 1, 150004, 1);
 
 -- --------------------------------------------------------
 
@@ -178,7 +180,7 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `bookID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=150085;
+  MODIFY `bookID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=150095;
 --
 -- AUTO_INCREMENT for table `login`
 --
@@ -188,7 +190,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `notification`
 --
 ALTER TABLE `notification`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `students`
 --
