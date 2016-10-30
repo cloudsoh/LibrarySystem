@@ -46,9 +46,9 @@ if(strlen($q)>=0)
 	{
 		
 		if(isset($rows['lenderID'])){
-			$temp="OUT";
+			$temp="<button class='btn btn-danger' onclick='notify()'>NOTIFY ME</button>";
 		}else{
-			$temp="AVAILABLE";
+			$temp="<button class='btn btn-success' disabled>AVAILABLE</button>";
 		}
 
     $image=$rows['image'];
