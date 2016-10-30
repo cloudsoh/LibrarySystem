@@ -31,10 +31,10 @@
     }
     
     if(bookID!=null){
-      alert('asd');
+      // alert('asd');
       xmlhttp.open("GET","studentlivesearch.php?q="+str+"&page="+page+"&bID="+bookID,true);
     }else{
-      alert('qwe');
+      // alert('qwe');
     xmlhttp.open("GET","studentlivesearch.php?q="+str+"&page="+page,true);
     }
     xmlhttp.send();
@@ -68,7 +68,7 @@
     $("a").click(function(){
       // alert('ASD');
       i=$(this).data("value");
-      alert(i);
+      // alert(i);
       showResult(lastSearch,i,bookID);
     });
     $("#notify").on("click", ".btn", function () {
@@ -77,10 +77,10 @@
 });
     // $('#search').val('');
   });
-  function recordNotify(){
-    var a=$(this).attr("value");
-    // alert(a);
-      showResult(lastSearch,page,a);
+  function recordNotify(str){
+    // var str=$(this).attr("value");
+    
+      showResult(lastSearch,page,str);
       // alert('s');
     // alert($(this).attr("value"));
   };

@@ -17,18 +17,12 @@ if(strlen($q)>=0)
 	$sql = "SELECT * FROM books WHERE bookID LIKE '%$q%' OR bookName LIKE '%$q%' OR author LIKE '%$q%' OR publisher LIKE '%$q%' OR genre LIKE '%$q%' LIMIT $start_from, $num_rec_per_page";
 
 	$result = $conn->query($sql);
-echo "HI";
-echo $_GET['q'];
-echo "<br>";
-echo $_GET['page'];
-echo "<br>";
-echo $_GET['bID'];
 	$hints = array();
   if(isset($_GET['bID'])){
     echo "HI BID";
-    session_start();
-    $id=$_GET['id'];
-    $bookID=$_GET['bookID'];
+    
+    $id=$_SESSION['userid'];
+    $bookID=$_GET['bID'];
     $notifysql="INSERT INTO notification (id,bookID) VALUES ($id,$bookID)";
     if ($conn->query($notifysql) === TRUE) {
       $_SESSION['notify']="ASD";
@@ -60,7 +54,18 @@ echo $_GET['bID'];
 	{
 		
 		if(isset($rows['lenderID'])){
-			$temp="<button class='btn btn-danger' id='notify' value='".$rows['bookID']."' data-value='".$rows['bookID']."' >NOTIFY ME</button>";
+      $checksql = "SELECT * FROM notification WHERE id='".$_SESSION['userid']."' AND bookID='".$rows['bookID']."'";
+      $checkresult = $conn->query($checksql);
+      if ($checkresult->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        $temp="<button class='btn btn-danger' >REQUESTED</button>";
+    }
+} else {
+      $temp="<button class='btn btn-danger' id='notify' value='".$rows['bookID']."' data-value='".$rows['bookID']."' onclick='recordNotify(this.value)'>NOTIFY ME</button>";
+}
+      // echo $checksql;
+			
 		}else{
 			$temp="<button class='btn btn-success' disabled>AVAILABLE</button>";
 		}
