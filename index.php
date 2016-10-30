@@ -52,7 +52,7 @@ if($_SESSION['flash']=="a"){
                                     <img src="img/samples/sample1.png" alt="">
                                 </div>
                                 <div class="tp-caption large_white_bold sft" data-x="520" data-y="center" data-hoffset="0" data-voffset="-120" data-speed="500" data-start="1200" data-easing="Power4.easeOut">
-                                    <h1>welcome</h1>
+                                    <h1>most popular book</h1>
                                 </div>
                                 <div class="tp-caption large_white_light sfb" data-x="520" data-y="center" data-hoffset="0" data-voffset="10" data-speed="1000" data-start="1300" data-easing="Power4.easeOut">
                                     Today Promote Book

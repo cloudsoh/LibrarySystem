@@ -235,7 +235,7 @@
           <div class="form-group">
             <label for="price" class="control-label col-md-2">Price: </label>
             <div class="col-md-10">
-              <input class="form-control" type="text" id="price" name="price" required>
+              <input class="form-control" type="number" step="0.01" id="price" name="price" required>
             </div>
           </div>
           <div class="form-group">
