@@ -88,7 +88,7 @@
 <body onload="showResult('')">
 <?php
 if(isset($_SESSION['notify'])){
-  echo "<script>alert('Request notification success! We will notify you once the book is available! Please check your overview periodically!'";
+  echo "<script>alert('Request notification success! We will notify you once the book is available! Please check your overview periodically!'</script>";
   $_SESSION['notify']=null;
 }
 ?>
