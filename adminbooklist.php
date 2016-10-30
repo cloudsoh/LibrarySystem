@@ -73,8 +73,11 @@
       var image = button.data('image');
       var lenderID = button.data('lid');
       var modal = $(this);
-      if(lenderID!=null){
-        modal.find('.rj #borrow').addClass("disabled");
+      promptout(lenderID);
+      if(lenderID==''){
+        modal.find('.rj #borrow').addClass('disabled');
+      }else{
+        modal.find('rj #borrow').removeClass('disabled');
       }
       modal.find('.modal-body img').attr("src",image);
       modal.find('.modal-body #bookID').attr("value",bid);
@@ -82,6 +85,9 @@
       modal.find('.rj #return').attr("href","return.php?bid="+bid);
     });
   });
+  function promptout(str){
+    alert(str);
+  }
 </script>
 <body onload="showResult('')">
  <div class="hc aps">
