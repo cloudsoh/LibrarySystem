@@ -134,7 +134,7 @@ echo "<li><a href='#' data-value='$total_pages'>".'Last'."</a></li></div> "; // 
         <h4 class="modal-title" id="myModalLabel"></h4>
       </div>
       <div class="modal-body">
-        <img src="" alt="NO IMAGE">
+        <img src="" alt="NO IMAGE" width="100%">
         <p id="introduction"></p>
       </div>
     </div>
