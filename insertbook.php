@@ -16,7 +16,7 @@ move_uploaded_file($tmp_name, $target_file);
 
 $sql="INSERT INTO books (bookName,introduction,author,publisher,genre,publishdate,language,price,image) VALUES ('$bookName','$intro','$author','$publisher','$genre','$pDate','$language','$price','$target_file')" ;
 if($conn->query($sql)===TRUE){
-	echo "<script>alert('New Book Has Succesfully Inserte!');window.location='adminbooklist.php'</script>";
+	echo "<script>alert('New Book Has Succesfully Insert!');window.location='adminbooklist.php'</script>";
 }else{
 	echo "Error: ".$sql. "<br>" .$conn->error;
 }
