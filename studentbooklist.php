@@ -29,7 +29,6 @@
     if(page==null){
       page=1;
     }
-    
     if(bookID!=null){
       // alert('asd');
       xmlhttp.open("GET","studentlivesearch.php?q="+str+"&page="+page+"&bID="+bookID,true);

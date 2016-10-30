@@ -57,13 +57,13 @@ if(strlen($q)>=0)
       $checksql = "SELECT * FROM notification WHERE id='".$_SESSION['userid']."' AND bookID='".$rows['bookID']."'";
       $checkresult = $conn->query($checksql);
       if ($checkresult->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        $temp="<button class='btn btn-danger' >REQUESTED</button>";
-    }
-} else {
-      $temp="<button class='btn btn-danger' id='notify' value='".$rows['bookID']."' data-value='".$rows['bookID']."' onclick='recordNotify(this.value)'>NOTIFY ME</button>";
-}
+      // output data of each row
+      while($row = $checkresult->fetch_assoc()) {
+          $temp="<button class='btn btn-danger' >REQUESTED</button>";
+      }
+      } else {
+            $temp="<button class='btn btn-danger' id='notify' value='".$rows['bookID']."' data-value='".$rows['bookID']."' onclick='recordNotify(this.value)'>NOTIFY ME</button>";
+      }
       // echo $checksql;
 			
 		}else{
