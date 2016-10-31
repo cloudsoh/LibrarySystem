@@ -33,7 +33,7 @@
     <tr>
       <td><?php echo $row['content'] ?></td>
       <td><?php echo $row['date'] ?></td>
-      <td><a href='removeMessage.php?id=<?php $row['id'] ?>'>Remove</a></td>
+      <td><a href='removeMessage.php?id=<?php $row['id'] ?>' class="ce apn">Remove</a></td>
     </tr>
    <?php  } ?>
       </tbody>
